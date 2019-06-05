@@ -1,4 +1,3 @@
-import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
 import pkg from './package'
 
 export default {
@@ -33,14 +32,14 @@ export default {
   ** Global CSS
   */
   css: [
-    '~/assets/style/app.styl'
+    // '~/assets/style/app.styl'
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/vuetify'
+    // '@/plugins/vuetify'
   ],
 
   /*
@@ -53,11 +52,11 @@ export default {
   ** Build configuration
   */
   build: {
-    transpile: ['vuetify/lib'],
-    plugins: [new VuetifyLoaderPlugin()],
+    transpile: [],
+    plugins: [],
     loaders: {
       stylus: {
-        import: ['~assets/style/variables.styl']
+        import: []
       }
     },
     /*
