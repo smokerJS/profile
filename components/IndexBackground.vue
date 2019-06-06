@@ -166,7 +166,6 @@ export default {
       opacity: 0;
     }
     80% {
-      filter: hue-rotate(300deg);
       opacity: 1;
       top: 0;
       left: 0;
@@ -203,7 +202,7 @@ export default {
       opacity: 0;
       top: 0;
       left: 0;
-      filter: hue-rotate(320deg);
+      filter: hue-rotate(1000deg);
     }
   }
 </style>
