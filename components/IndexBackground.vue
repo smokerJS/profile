@@ -1,13 +1,16 @@
 <template>
-  <section class="index-background-group" @mousemove="mouseMoveHandler">
-    <div class="background-img"
-      :style="{
-        marginLeft: this.moveX,
-        marginTop: this.moveY
-      }"
-    >
-      <div class="background-filter"></div>
-    </div>
+  <section>
+    <div class="index-background-cover" @mousemove="mouseMoveHandler"></div>
+    <section class="index-background-group">
+      <div class="background-img"
+        :style="{
+          marginLeft: this.moveX,
+          marginTop: this.moveY
+        }"
+      >
+        <div class="background-filter"></div>
+      </div>
+    </section>
   </section>
 </template>
 
@@ -46,12 +49,20 @@ export default {
 </script>
 
 <style lang="scss">
+  .index-background-cover {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255,255,255,.2);
+    z-index: 2;
+  }
   .index-background-group {
     position: absolute;
     width: 120%;
     height: 120vh;
     left: -10%;
     top: -10vh;
+    z-index: 1;
     & > .background-img {
       position: relative;
       width: 100%;
