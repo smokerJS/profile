@@ -25,12 +25,8 @@ export default {
   *:focus {
     outline: none;
   }
-
-  main {
-    position: relative;
-  }
   .layout-frame {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
