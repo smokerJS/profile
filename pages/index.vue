@@ -12,6 +12,7 @@
 <script>
 import IndexBackground from '../components/IndexBackground';
 
+
 export default {
   name: 'index',
   components: {

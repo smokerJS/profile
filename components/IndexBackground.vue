@@ -9,14 +9,19 @@
         }"
       >
         <div class="background-filter"></div>
+        <IndexCodeScreen/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import IndexCodeScreen from './IndexCodeScreen';
 export default {
   name: "index-background",
+  components: {
+    IndexCodeScreen,
+  },
   data: function() {
     return {
       width: 0,
@@ -42,7 +47,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scope>
   .index-background-cover {
     position: fixed;
     width: 100%;
