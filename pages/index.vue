@@ -42,7 +42,7 @@ export default {
         &.middle-text {
           background-color: #fff;
           height: 110px;
-          width: 70%;
+          width: 480px;
           margin: 0 0;
         }
         &.last-text {
