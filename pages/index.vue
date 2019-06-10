@@ -48,6 +48,9 @@ export default {
             width: 70%;
             margin: 0 0;
           }
+          &:nth-child(3) {
+            margin-top: -10px;
+          }
           & > strong {
             padding-right: 50%;
             background: linear-gradient(transparent 70%, rgb(255, 255, 255) 50%);
