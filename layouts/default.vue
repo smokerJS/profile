@@ -75,7 +75,7 @@ export default {
           background-size: 100% 100%;
         }
         &.open {
-          animation: nav-background-open-ani 10s ease forwards;
+          animation: nav-background-open-ani 6s ease forwards;
         }
         &.off {
           animation: nav-background-off-ani 2s ease forwards;
@@ -289,34 +289,31 @@ export default {
       opacity: 0;
       background-position:0% 0%;
     }
-    5% {
+    40% {
       opacity: 1;
       width: 100%;
       background-position:0% 0%;
     }
-    7%{
+    41%{
       background-position:0% 50%;
     }
     50%{
-      opacity: 1;
       background-position:100% 50%;
     };
     100%{
       opacity: 1;
       width: 100%;
-      background-position:0% 50%;
+      background-position:100% 100%;
     };
   }
   @keyframes nav-background-off-ani {
     0% {
       width: 100%;
-      opacity: 1;
-            background-position:0% 50%;
+      background-position:0% 50%;
       
     }
     50% {
       background-position:100% 50%;
-      
     }
     98%{
       opacity: 0;
