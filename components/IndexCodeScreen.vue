@@ -1,18 +1,66 @@
 <template>
   <article class="index-code-screen">
     <ul>
-      <li :class="code1"><strong class="tag">SmokerJS</strong></li>
-      <li :class="code2">&ensp;&ensp;I am a frontend developer</li>
-      <li :class="code3">&ensp;&ensp;<strong class="tag">SkillSet</strong></li>
-      <li :class="code4">&ensp;&ensp;&ensp;&ensp;<strong class="tag">Javascript</strong>ES6<strong class="tag end">Javascript</strong></li>
-      <li :class="code5">&ensp;&ensp;&ensp;&ensp;<strong class="tag">Vue</strong>Vue, Nuxt<strong class="tag end">Vue</strong></li>
-      <li :class="code6">&ensp;&ensp;&ensp;&ensp;<strong class="tag">React</strong>React, Redux, Next, Hooks<strong class="tag end">React</strong></li>
-      <li :class="code7">&ensp;&ensp;&ensp;&ensp;<strong class="tag">Other</strong>Webpak4, HTML5, Sass, Jquery<strong class="tag end">Other</strong></li>
-      <li :class="code8">&ensp;&ensp;&ensp;&ensp;<strong class="tag">ServerSide</strong>Node, Express, Java, Spring<strong class="tag end">ServerSide</strong></li>
-      <li :class="code9">&ensp;&ensp;&ensp;&ensp;<strong class="tag">Database</strong>Oracle, Mysql<strong class="tag end">Database</strong></li>
-      <li :class="code10">&ensp;&ensp;<strong class="tag end">SkillSet</strong></li>
-      <li :class="code11">&ensp;&ensp;Thank you</li>
-      <li :class="code12"><strong class="tag end">SmokerJS</strong></li>
+      <li :class="code1">
+        <span>
+          <strong class="tag">SmokerJS</strong>
+        </span>
+      </li>
+      <li :class="code2">
+        <span>
+          &ensp;&ensp;I am a frontend developer
+        </span>
+      </li>
+      <li :class="code3">
+        <span>
+          &ensp;&ensp;<strong class="tag">SkillSet</strong>
+        </span>
+      </li>
+      <li :class="code4">
+        <span>
+          &ensp;&ensp;&ensp;&ensp;<strong class="tag">Javascript</strong>ES6<strong class="tag end">Javascript</strong>
+        </span>
+      </li>
+      <li :class="code5">
+        <span>
+          &ensp;&ensp;&ensp;&ensp;<strong class="tag">Vue</strong>Vue, Nuxt<strong class="tag end">Vue</strong>
+        </span>
+      </li>
+      <li :class="code6">
+        <span>
+          &ensp;&ensp;&ensp;&ensp;<strong class="tag">React</strong>React, Redux, Next, Hooks<strong class="tag end">React</strong>
+        </span>
+      </li>
+      <li :class="code7">
+        <span>
+          &ensp;&ensp;&ensp;&ensp;<strong class="tag">Other</strong>Webpak4, HTML5, Sass, Jquery<strong class="tag end">Other</strong>
+        </span>
+      </li>
+      <li :class="code8">
+        <span>
+          &ensp;&ensp;&ensp;&ensp;<strong class="tag">ServerSide</strong>Node, Express, Java, Spring<strong class="tag end">ServerSide</strong>
+        </span>
+      </li>
+      <li :class="code9">
+        <span>
+          &ensp;&ensp;&ensp;&ensp;<strong class="tag">Database</strong>Oracle, Mysql<strong class="tag end">Database</strong>
+        </span>
+      </li>
+      <li :class="code10">
+        <span>
+          &ensp;&ensp;<strong class="tag end">SkillSet</strong>
+        </span>
+      </li>
+      <li :class="code11">
+        <span>
+          &ensp;&ensp;Thank you
+        </span>
+      </li>
+      <li :class="code12">
+        <span>
+          <strong class="tag end">SmokerJS</strong>
+        </span>
+      </li>
     </ul>
   </article>
 </template>
@@ -37,18 +85,57 @@ export default {
     };
   },
   created() {
-    setTimeout(()=>{this.$set(this.$data,'code1','')},2000);    //1
-    setTimeout(()=>{this.$set(this.$data,'code2','')},5300);    //3
-    setTimeout(()=>{this.$set(this.$data,'code3','')},8000);    //4
-    setTimeout(()=>{this.$set(this.$data,'code4','')},11500);   //6
-    setTimeout(()=>{this.$set(this.$data,'code5','')},15000);   //7
-    setTimeout(()=>{this.$set(this.$data,'code6','')},18000);   //8
-    setTimeout(()=>{this.$set(this.$data,'code7','')},22500);   //9
-    setTimeout(()=>{this.$set(this.$data,'code8','')},27500);   //10
-    setTimeout(()=>{this.$set(this.$data,'code9','')},33000);   //11
-    setTimeout(()=>{this.$set(this.$data,'code10','')},9500);  //5
-    setTimeout(()=>{this.$set(this.$data,'code11','')},38000);  //12
-    setTimeout(()=>{this.$set(this.$data,'code12','')},3500);   //2
+    setTimeout(()=>{
+      this.$set(this.$data,'code1','typing');
+    },2000);    //1
+    setTimeout(()=>{
+      this.$set(this.$data,'code2','typing');
+      this.$set(this.$data,'code12','');
+    },5600);    //3
+    setTimeout(()=>{
+      this.$set(this.$data,'code3','typing');
+      this.$set(this.$data,'code2','');
+    },9000);    //4
+    setTimeout(()=>{
+      this.$set(this.$data,'code4','typing');
+      this.$set(this.$data,'code10','');
+    },12900);   //6
+    setTimeout(()=>{
+      this.$set(this.$data,'code5','typing');
+      this.$set(this.$data,'code4','');
+    },16500);   //7
+    setTimeout(()=>{
+      this.$set(this.$data,'code6','typing');
+      this.$set(this.$data,'code5','');
+    },20500);   //8
+    setTimeout(()=>{
+      this.$set(this.$data,'code7','typing');
+      this.$set(this.$data,'code6','');
+    },25000);   //9
+    setTimeout(()=>{
+      this.$set(this.$data,'code8','typing');
+      this.$set(this.$data,'code7','');
+    },31000);   //10
+    setTimeout(()=>{
+      this.$set(this.$data,'code9','typing');
+      this.$set(this.$data,'code8','');
+    },38000);   //11
+    setTimeout(()=>{
+      this.$set(this.$data,'code10','typing');
+      this.$set(this.$data,'code9','');
+    },43500);   //12
+    setTimeout(()=>{
+      this.$set(this.$data,'code10','typing');
+      this.$set(this.$data,'code3','');
+    },10800);  //5
+    setTimeout(()=>{
+      this.$set(this.$data,'code11','typing');
+      this.$set(this.$data,'code10','');
+    },44700);  //13
+    setTimeout(()=>{
+      this.$set(this.$data,'code12','typing');
+      this.$set(this.$data,'code1','');
+    },4100);   //2
   },
 };
 </script>
@@ -74,28 +161,37 @@ export default {
         overflow: hidden;
         white-space: nowrap;
         letter-spacing: 1.2px;
-        animation: typing 5s steps(60, end) forwards;
-        & > strong.tag {
-          color: rgb(37,102,202);
-          &::before {
-            content: "<";
-            color: rgb(200,200,200);
-            margin-right: 1px;
+        animation: typing-ani 5s steps(60, end) forwards;
+        &.typing {
+          & > span {
+            padding-right: 1px;
+            border-right: 1.2px solid rgb(230,230,230);
+            animation: typing-bar-ani .75s step-end infinite;
           }
-          &.end::before {
-            content: "</";
-            color: rgb(200,200,200);
-            margin: 0 1px 0 2px;
-          }
-          &::after {
-            content: ">";
-            color: rgb(200,200,200);
-            margin: 0 2px 0 1px;
-          }
-          &.end::after {
-            content: ">";
-            color: rgb(200,200,200);
-            margin-left: 1px;
+        }
+        & > span {
+          & > strong.tag {
+            color: rgb(37,102,202);
+            &::before {
+              content: "<";
+              color: rgb(200,200,200);
+              margin-right: 1px;
+            }
+            &.end::before {
+              content: "</";
+              color: rgb(200,200,200);
+              margin: 0 1px 0 2px;
+            }
+            &::after {
+              content: ">";
+              color: rgb(200,200,200);
+              margin: 0 2px 0 1px;
+            }
+            &.end::after {
+              content: ">";
+              color: rgb(200,200,200);
+              margin-left: 1px;
+            }
           }
         }
         &.hidden {
@@ -105,8 +201,8 @@ export default {
     }
   }
 
-  /* The typing effect */
-  @keyframes typing {
+
+  @keyframes typing-ani {
     from {
       width: 0;
       visibility: hidden;
@@ -120,13 +216,13 @@ export default {
     }
   }
 
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
+
+  @keyframes typing-bar-ani {
     from, to {
       border-color: transparent;
     }
     50% {
-      border-right: 1.2px solid orange;
+      border-right: 1.2px solid rgb(230,230,230);
     }
   }
 </style>
