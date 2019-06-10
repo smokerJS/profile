@@ -1,7 +1,7 @@
 <template>
-  <section class="layout-frame">
+  <div class="layout-frame">
     <nuxt />
-  </section>
+  </div>
 </template>
 
 <script>

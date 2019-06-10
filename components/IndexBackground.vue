@@ -1,7 +1,7 @@
 <template>
-  <section>
+  <div>
     <div class="index-background-cover" @mousemove="mouseMoveHandler"></div>
-    <section class="index-background-group">
+    <div class="index-background-group">
       <div class="background-img"
         :style="{
           marginLeft: this.moveX,
@@ -10,14 +10,11 @@
       >
         <div class="background-filter"></div>
       </div>
-    </section>
-  </section>
+    </div>
+  </div>
 </template>
 
 <script>
-const eventHandler = {
-  mouseMoveTimeout : null
-};
 export default {
   name: "index-background",
   data: function() {
@@ -34,11 +31,8 @@ export default {
       this.$set(this.$data, 'height', window.innerHeight);
     },
     mouseMoveHandler(e) {
-      eventHandler.mouseMoveTimeout && (eventHandler.mouseMoveTimeout = null);
-      eventHandler.mouseMoveTimeout = setTimeout(()=>{
-        this.$set(this.$data, 'moveX', `${((this.width / 2) - e.clientX) * 0.1}px`);
-        this.$set(this.$data, 'moveY', `${((this.height / 2) - e.clientY) * 0.1}px`);
-      }, 300);
+      this.$set(this.$data, 'moveX', `${((this.width / 2) - e.clientX) * 0.1}px`);
+      this.$set(this.$data, 'moveY', `${((this.height / 2) - e.clientY) * 0.1}px`);
     }
   },
   created() {
@@ -69,7 +63,8 @@ export default {
       height: 100%;
       background: url("../assets/images/index/img_background.jpg") no-repeat center;
       background-size: cover;
-      transition: 2s;
+      transition: 1.2s;
+      transition-timing-function: ease-in-out;
       & > .background-filter {
         position: absolute;
         width: 100%;
