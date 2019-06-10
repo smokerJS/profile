@@ -31,4 +31,9 @@ export default {
     height: 100vh;
     overflow: hidden;
   }
+  @font-face {
+    font-family: "FightThis";
+    src: url("../assets/fonts/FightThis.eot");
+    src: local(※), url("../assets/fonts/FightThis.woff") format("woff");
+  }
 </style>
