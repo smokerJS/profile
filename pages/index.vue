@@ -40,6 +40,7 @@ export default {
         line-height: 100px;
         & > span {
           display: block;
+          padding-left: 5px;
           height: 100px;
           &:nth-child(2) {
             background-color: #fff;
