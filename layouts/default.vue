@@ -12,7 +12,7 @@
           <span class="bottom bottom-2"></span>
       </button>
       <ul class="global-nav-menu" :class="this.toggleNav">
-
+        <div class="global-nav-background"></div>
       </ul>
     </nav>
     <nuxt />
@@ -65,13 +65,20 @@ export default {
       z-index: 101;
       & > .global-nav-menu {
         position: fixed;
-        width: 100%;
         height: 100vh;
         top: 0;
-        background: #fff;
-        display: none;
+        & > .global-nav-background {
+          width: 100%;
+          height: 100%;
+          //background: linear-gradient(to right, rgba(255,255,255,.0), rgba(255,255,255,.8));
+          background: linear-gradient(90deg, rgba(255,255,255,.0), rgba(255,255,255,.8));
+          background-size: 100% 100%;
+        }
         &.open {
-          display: block;
+          animation: nav-background-open-ani 3s ease forwards;
+        }
+        &.off {
+          animation: nav-background-off-ani 1s forwards;
         }
       }
 
@@ -273,6 +280,41 @@ export default {
     }
     to {
       bottom: -40px;
+    }
+  }
+
+  @keyframes nav-background-open-ani {
+    0% {
+      width: 0%;
+      opacity: 0;
+      background-position:0% 0%;
+    }
+    1% {
+      opacity: 0;
+      width: 100%;
+      background-position:0% 0%;
+    }
+    2%{
+      width: 100%;
+      background-position:0% 50%;
+    }
+    50%{
+      opacity: 1;
+      width: 100%;
+      background-position:100% 50%;
+    };
+    100%{
+      opacity: 1;
+      width: 100%;
+      background-position:0% 50%;
+    };
+  }
+  @keyframes nav-background-off-ani {
+    from {
+      width: 100%;
+    }
+    to {
+      width: 0%;
     }
   }
 </style>
