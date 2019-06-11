@@ -143,8 +143,8 @@ export default {
 <style lang="scss" scope>
   .index-code-screen {
     position: absolute;
-    bottom: 15%;
-    right: 10%;
+    bottom: 20%;
+    right: 8%;
     z-index: 1;
     font-size: 20px;
     letter-spacing: 1.2px;
@@ -152,7 +152,7 @@ export default {
     font-family: "D2Coding";
     & > ul {
       display: block;
-      width: 720px;
+      width: 660px;
       height: 218px;
       & > li {
         height: 22px;
