@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="index-background-cover" @mousemove="mouseMoveHandler"></div>
+  <div @mousemove="mouseMoveHandler">
+    <IndexBackgroundCanvas/>
     <div class="index-background-group">
       <div class="background-img"
         :style="{
@@ -19,11 +19,13 @@
 const eventHandler = {
   mouseMoveTimeout : null
 };
+import IndexBackgroundCanvas from './IndexBackgroundCanvas';
 import IndexCodeScreen from './IndexCodeScreen';
 export default {
   name: "index-background",
   components: {
     IndexCodeScreen,
+    IndexBackgroundCanvas
   },
   data: function() {
     return {
