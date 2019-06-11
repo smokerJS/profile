@@ -97,33 +97,37 @@ export default {
       this.$set(this.$data,'code2','');
     },10500);    //4
     setTimeout(()=>{
-      this.$set(this.$data,'code4','typing');
+      this.$set(this.$data,'code3','typing');
       this.$set(this.$data,'code10','');
-    },14400);   //6
+    },13900);   //6
+    setTimeout(()=>{
+      this.$set(this.$data,'code4','typing');
+      this.$set(this.$data,'code3','');
+    },14600);   //7
     setTimeout(()=>{
       this.$set(this.$data,'code5','typing');
       this.$set(this.$data,'code4','');
-    },18000);   //7
+    },18200);   //8
     setTimeout(()=>{
       this.$set(this.$data,'code6','typing');
       this.$set(this.$data,'code5','');
-    },22000);   //8
+    },22200);   //9
     setTimeout(()=>{
       this.$set(this.$data,'code7','typing');
       this.$set(this.$data,'code6','');
-    },26500);   //9
+    },26700);   //10
     setTimeout(()=>{
       this.$set(this.$data,'code8','typing');
       this.$set(this.$data,'code7','');
-    },32500);   //10
+    },32700);   //11
     setTimeout(()=>{
       this.$set(this.$data,'code9','typing');
       this.$set(this.$data,'code8','');
-    },39500);   //11
+    },39700);   //12
     setTimeout(()=>{
       this.$set(this.$data,'code10','typing');
       this.$set(this.$data,'code9','');
-    },44500);   //12
+    },44700);   //13
     setTimeout(()=>{
       this.$set(this.$data,'code10','typing');
       this.$set(this.$data,'code3','');
@@ -131,7 +135,7 @@ export default {
     setTimeout(()=>{
       this.$set(this.$data,'code11','typing');
       this.$set(this.$data,'code10','');
-    },45000);  //13
+    },45200);  //14
     setTimeout(()=>{
       this.$set(this.$data,'code12','typing');
       this.$set(this.$data,'code1','');
@@ -143,7 +147,7 @@ export default {
 <style lang="scss" scope>
   .index-code-screen {
     position: absolute;
-    bottom: 20%;
+    top: 50%;
     right: 8%;
     z-index: 1;
     font-size: 20px;
