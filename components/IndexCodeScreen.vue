@@ -155,7 +155,7 @@ export default {
       width: 660px;
       height: 218px;
       & > li {
-        height: 22px;
+        height: 26px;
         clear: both;
         float: left;
         color: rgb(230,230,230);
