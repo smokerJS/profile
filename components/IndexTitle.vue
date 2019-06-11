@@ -2,7 +2,7 @@
   <h1
     ref="indexTitle"
     class="title-area"
-    :style="{textShadow: `${rootY/10}px ${rootX/80}px rgba(255,0,255,.9), ${rootY/8}px ${rootX/60}px rgba(255,237,0,.5), ${rootX/70}px ${rootY/12}px rgba(12,0,248,.7)`}"
+    :style="{textShadow: `${rootY/10}px ${rootX/80}px rgba(255,0,255,.9), ${rootY/8}px ${rootX/60}px rgba(0,0,0,0), ${rootX/70}px ${rootY/12}px rgba(12,0,248,.7)`}"
   >
     <span>I AM A</span>
     <span class="middle-text">FRONT-END</span>
