@@ -3,10 +3,7 @@
     <ul>
       <li :class="code1">
         <span>
-          <strong class="tag">
-            SmokerJS
-            &ensp;<span class="attr">name</span><span class="value">Jung, Jinsol</span>
-          </strong>
+          <strong class="tag">SmokerJS <span class="attr">name</span><span class="value">Jung, Jinsol</span></strong>
         </span>
       </li>
       <li :class="code2">
