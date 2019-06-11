@@ -146,16 +146,16 @@ export default {
     bottom: 15%;
     right: 10%;
     z-index: 1;
-    font-size: 14px;
+    font-size: 20px;
     letter-spacing: 1.2px;
     font-weight: bold;
     font-family: "D2Coding";
     & > ul {
       display: block;
-      width: 480px;
+      width: 720px;
       height: 218px;
       & > li {
-        height: 18px;
+        height: 22px;
         clear: both;
         float: left;
         color: rgb(230,230,230);
@@ -182,7 +182,7 @@ export default {
                 }
               }
               &.value {
-                color: rgb(210, 103, 53);
+                color: rgb(177, 83, 0);
                 &::before, &::after {
                   content: "\"";
                 }
