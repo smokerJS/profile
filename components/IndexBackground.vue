@@ -16,6 +16,9 @@
 </template>
 
 <script>
+const eventHandler = {
+  mouseMoveTimeout : null
+};
 import IndexCodeScreen from './IndexCodeScreen';
 export default {
   name: "index-background",
@@ -36,8 +39,11 @@ export default {
       this.$set(this.$data, 'height', window.innerHeight);
     },
     mouseMoveHandler(e) {
-      this.$set(this.$data, 'moveX', `${((this.width / 2) - e.clientX) * 0.1}px`);
-      this.$set(this.$data, 'moveY', `${((this.height / 2) - e.clientY) * 0.1}px`);
+      eventHandler.mouseMoveTimeout && (clearTimeout(eventHandler.mouseMoveTimeout), eventHandler.mouseMoveTimeout = null);
+      eventHandler.mouseMoveTimeout = setTimeout(()=>{
+        this.$set(this.$data, 'moveX', `${((this.width / 2) - e.clientX) * 0.1}px`);
+        this.$set(this.$data, 'moveY', `${((this.height / 2) - e.clientY) * 0.1}px`);
+      }, 100);
     }
   },
   created() {
@@ -68,7 +74,7 @@ export default {
       height: 100%;
       background: url("../assets/images/index/img_background.jpg") no-repeat center;
       background-size: cover;
-      transition: 1.2s;
+      transition: 1.5s;
       transition-timing-function: ease-in-out;
       & > .background-filter {
         position: absolute;
