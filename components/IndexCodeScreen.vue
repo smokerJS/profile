@@ -3,7 +3,10 @@
     <ul>
       <li :class="code1">
         <span>
-          <strong class="tag">SmokerJS</strong>
+          <strong class="tag">
+            SmokerJS
+            &ensp;<span class="attr">name</span><span class="value">Jung, Jinsol</span>
+          </strong>
         </span>
       </li>
       <li :class="code2">
@@ -91,51 +94,51 @@ export default {
     setTimeout(()=>{
       this.$set(this.$data,'code2','typing');
       this.$set(this.$data,'code12','');
-    },5600);    //3
+    },7100);    //3
     setTimeout(()=>{
       this.$set(this.$data,'code3','typing');
       this.$set(this.$data,'code2','');
-    },9000);    //4
+    },10500);    //4
     setTimeout(()=>{
       this.$set(this.$data,'code4','typing');
       this.$set(this.$data,'code10','');
-    },12900);   //6
+    },14400);   //6
     setTimeout(()=>{
       this.$set(this.$data,'code5','typing');
       this.$set(this.$data,'code4','');
-    },16500);   //7
+    },18000);   //7
     setTimeout(()=>{
       this.$set(this.$data,'code6','typing');
       this.$set(this.$data,'code5','');
-    },20500);   //8
+    },22000);   //8
     setTimeout(()=>{
       this.$set(this.$data,'code7','typing');
       this.$set(this.$data,'code6','');
-    },25000);   //9
+    },26500);   //9
     setTimeout(()=>{
       this.$set(this.$data,'code8','typing');
       this.$set(this.$data,'code7','');
-    },31000);   //10
+    },32500);   //10
     setTimeout(()=>{
       this.$set(this.$data,'code9','typing');
       this.$set(this.$data,'code8','');
-    },38000);   //11
+    },39500);   //11
     setTimeout(()=>{
       this.$set(this.$data,'code10','typing');
       this.$set(this.$data,'code9','');
-    },43500);   //12
+    },44500);   //12
     setTimeout(()=>{
       this.$set(this.$data,'code10','typing');
       this.$set(this.$data,'code3','');
-    },10800);  //5
+    },12300);  //5
     setTimeout(()=>{
       this.$set(this.$data,'code11','typing');
       this.$set(this.$data,'code10','');
-    },44700);  //13
+    },45000);  //13
     setTimeout(()=>{
       this.$set(this.$data,'code12','typing');
       this.$set(this.$data,'code1','');
-    },4100);   //2
+    },5600);   //2
   },
 };
 </script>
@@ -172,6 +175,21 @@ export default {
         & > span {
           & > strong.tag {
             color: rgb(37,102,202);
+            & > span {
+              &.attr {
+                color: rgb(142, 208, 252);
+                &::after {
+                  color: rgb(230,230,230);
+                  content: "=";
+                }
+              }
+              &.value {
+                color: rgb(210, 103, 53);
+                &::before, &::after {
+                  content: "\"";
+                }
+              }
+            }
             &::before {
               content: "<";
               color: rgb(200,200,200);
