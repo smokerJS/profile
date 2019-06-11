@@ -39,6 +39,7 @@ export default {
     letter-spacing: 5px;
     font-weight: bold;
     line-height: 100px;
+    transition: .1s;
     & > span {
       display: block;
       padding-left: 5px;
