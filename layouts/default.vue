@@ -57,6 +57,11 @@ export default {
     src: url("../assets/fonts/FightThis.eot");
     src: local(※), url("../assets/fonts/FightThis.woff") format("woff");
   }
+  @font-face {
+    font-family: "D2Coding";
+    src: url("../assets/fonts/D2Coding.eot");
+    src: local(※), url("../assets/fonts/D2Coding.woff") format("woff");
+  }
 </style>
 <style lang="scss" scope>
   .layout-frame {
@@ -310,7 +315,7 @@ export default {
     0% {
       width: 100%;
       background-position:0% 50%;
-      
+
     }
     50% {
       background-position:100% 50%;

@@ -56,7 +56,7 @@
       </li>
       <li :class="code11">
         <span>
-          &ensp;&ensp;Thank you
+          &ensp;&ensp;Thank you.
         </span>
       </li>
       <li :class="code12">
@@ -152,6 +152,7 @@ export default {
     font-size: 14px;
     letter-spacing: 1.2px;
     font-weight: bold;
+    font-family: "D2Coding";
     & > ul {
       display: block;
       width: 480px;
