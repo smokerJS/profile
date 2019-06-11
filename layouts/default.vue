@@ -2,6 +2,9 @@
   <div class="layout-frame">
     <GNB/>
     <nuxt />
+    <div class="license">
+      <strong>Copyright(c) 2019 smokerJS All rights reserved.</strong>
+    </div>
   </div>
 </template>
 
@@ -45,6 +48,13 @@ export default {
 </style>
 <style lang="scss" scope>
   .layout-frame {
-
+    .license {
+      position: absolute;
+      font-family: "D2Coding";
+      font-size: 12px;
+      right: 8px;
+      bottom: 5px;
+      z-index: 111;
+    }
   }
 </style>
