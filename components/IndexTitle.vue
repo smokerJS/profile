@@ -1,5 +1,9 @@
 <template>
-  <h1 class="title-area">
+  <h1
+    ref="indexTitle"
+    class="title-area"
+    :style="{textShadow: `${rootY/10}px ${rootX/80}px rgba(255,0,0,.9), ${rootY/8}px ${rootX/60}px rgba(255,237,0,.8), ${rootX/70}px ${rootY/12}px rgba(12,0,248,.7)`}"
+  >
     <span>I AM A</span>
     <span class="middle-text">FRONT-END</span>
     <span class="last-text">DEVELOP<strong>ER</strong></span>
@@ -11,20 +15,14 @@ export default {
   name: "index-title",
   data: function() {
     return {
-      width: 0,
-      height: 0,
-      moveX: '',
-      moveY: ''
+      rootX: 0,
+      rootY: 0
     };
   },
   methods: {
-    setResizeData() {
-      this.$set(this.$data, 'width', window.innerWidth);
-      this.$set(this.$data, 'height', window.innerHeight);
-    },
     mouseMoveHandler(e) {
-      this.$set(this.$data, 'moveX', `${((this.width / 2) - e.clientX) * 0.1}px`);
-      this.$set(this.$data, 'moveY', `${((this.height / 2) - e.clientY) * 0.1}px`);
+      this.$set(this.$data, 'rootX', (e.pageX - this.$refs.indexTitle.offsetLeft - (this.$refs.indexTitle.clientWidth / 2)) * 0.2);
+      this.$set(this.$data, 'rootY', (e.pageY - this.$refs.indexTitle.offsetTop - (this.$refs.indexTitle.clientHeight / 2)) * 0.2);
     }
   },
 };

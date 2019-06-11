@@ -1,6 +1,6 @@
 <template>
-  <section class="index-page">
-    <IndexTitle/>
+  <section class="index-page" @mousemove="mouseMoveHandler">
+    <IndexTitle ref="IndexTitleComponent"/>
     <IndexBackground/>
   </section>
 </template>
@@ -15,6 +15,11 @@ export default {
   components: {
     IndexBackground,
     IndexTitle ,
+  },
+  methods: {
+    mouseMoveHandler(e) {
+      this.$refs.IndexTitleComponent.mouseMoveHandler(e);
+    }
   },
 }
 </script>
