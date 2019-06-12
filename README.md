@@ -20,4 +20,4 @@ $ yarn start
 $ yarn run generate
 ```
 
-###Copyright(c) 2019 smokerJS All rights reserved.
+### Copyright(c) 2019 smokerJS All rights reserved.
