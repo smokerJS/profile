@@ -1,6 +1,7 @@
 # profile
 
-> My majestic Nuxt.js project
+> Nuxt.js project
+> SmokerJS profile web
 
 ## Build Setup
 
@@ -19,4 +20,4 @@ $ yarn start
 $ yarn run generate
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+###Copyright(c) 2019 smokerJS All rights reserved.
