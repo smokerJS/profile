@@ -1,6 +1,6 @@
 # profile
 
-> Nuxt.js project
+> Nuxt.js project \
 > SmokerJS profile web
 
 ## Build Setup
