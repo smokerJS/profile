@@ -149,7 +149,7 @@ export default {
     position: absolute;
     top: 50%;
     right: 8%;
-    z-index: 1;
+    z-index: 4;
     font-size: 20px;
     letter-spacing: 1.2px;
     font-weight: bold;

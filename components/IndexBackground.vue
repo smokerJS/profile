@@ -8,6 +8,7 @@
           marginTop: this.moveY
         }"
       >
+        <div class="background-line"></div>
         <div class="background-filter"></div>
         <IndexCodeScreen/>
       </div>
@@ -75,9 +76,19 @@ export default {
       width: 100%;
       height: 100%;
       background: url("../assets/images/index/img_background.jpg") no-repeat center;
+      //background-color: black;
       background-size: cover;
       transition: 1.5s;
       transition-timing-function: ease-in-out;
+      & > .background-line {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url("../assets/images/index/img_background_line.png") no-repeat center;
+        background-size: cover;
+        // animation: filter-ani 10s infinite;
+        z-index: 3;
+      }
       & > .background-filter {
         position: absolute;
         width: 100%;
@@ -85,6 +96,7 @@ export default {
         background: url("../assets/images/index/img_background_filter.png") no-repeat center;
         background-size: cover;
         animation: filter-ani 10s infinite;
+        z-index: 2;
       }
     }
   }
