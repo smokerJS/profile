@@ -75,8 +75,8 @@ export default {
       position: relative;
       width: 100%;
       height: 100%;
-      background: url("../assets/images/index/img_background.jpg") no-repeat center;
-      //background-color: black;
+      //background: url("../assets/images/index/img_background.jpg") no-repeat center;
+      background-color: black;
       background-size: cover;
       transition: 1.5s;
       transition-timing-function: ease-in-out;
