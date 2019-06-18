@@ -49,6 +49,7 @@ export default {
 <style lang="scss" scope>
   .layout-frame {
     .license {
+      color: #fff;
       position: absolute;
       font-family: "D2Coding";
       font-size: 12px;
