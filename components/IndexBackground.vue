@@ -131,7 +131,7 @@ export default {
       left: 0.2%;
     }
     12% {
-      opacity: 1;
+      opacity: .7;
       left: 0;
     }
     13% {
@@ -154,7 +154,7 @@ export default {
       top: 0.3%;
     }
     22% {
-      opacity: 1;
+      opacity: .7;
       top: 0;
     }
     23% {
@@ -169,10 +169,10 @@ export default {
       opacity: 0;
     }
     31% {
-      opacity: 1;
+      opacity: .7;
     }
     32% {
-      opacity: 1;
+      opacity: .7;
     }
     33% {
       opacity: .2;
@@ -192,14 +192,14 @@ export default {
       opacity: 0;
     }
     45% {
-      opacity: 1;
+      opacity: .7;
     }
     79% {
       filter: hue-rotate(1000deg);
       opacity: 0;
     }
     80% {
-      opacity: 1;
+      opacity: .7;
       top: 0;
       left: 0;
     }
@@ -255,7 +255,7 @@ export default {
       left: 1%;
     }
     12% {
-      opacity: 1;
+      opacity: .7;
       left: 0;
     }
     13% {
@@ -278,7 +278,7 @@ export default {
       top: 1.5%;
     }
     22% {
-      opacity: 1;
+      opacity: .7;
       top: 0;
     }
     23% {
@@ -293,10 +293,10 @@ export default {
       opacity: 0;
     }
     31% {
-      opacity: 1;
+      opacity: .7;
     }
     32% {
-      opacity: 1;
+      opacity: .7;
     }
     33% {
       opacity: .2;
@@ -316,14 +316,14 @@ export default {
       opacity: 0;
     }
     45% {
-      opacity: 1;
+      opacity: .7;
     }
     79% {
       filter: hue-rotate(1000deg);
       opacity: 0;
     }
     80% {
-      opacity: 1;
+      opacity: .7;
       top: 0;
       left: 0;
     }
@@ -379,7 +379,7 @@ export default {
       left: 0.2%;
     }
     12% {
-      opacity: 1;
+      opacity: .7;
       left: 0;
     }
     13% {
@@ -402,7 +402,7 @@ export default {
       top: 0.5%;
     }
     22% {
-      opacity: 1;
+      opacity: .7;
       top: 0;
     }
     23% {
@@ -417,10 +417,10 @@ export default {
       opacity: 0;
     }
     31% {
-      opacity: 1;
+      opacity: .7;
     }
     32% {
-      opacity: 1;
+      opacity: .7;
     }
     33% {
       opacity: .2;
@@ -440,14 +440,14 @@ export default {
       opacity: 0;
     }
     45% {
-      opacity: 1;
+      opacity: .7;
     }
     79% {
       filter: hue-rotate(1200deg);
       opacity: 0;
     }
     80% {
-      opacity: 1;
+      opacity: .7;
       top: 0;
       left: 0;
     }
@@ -503,7 +503,7 @@ export default {
       left: -1%;
     }
     12% {
-      opacity: 1;
+      opacity: .7;
       left: 0;
     }
     13% {
@@ -526,7 +526,7 @@ export default {
       top: -1.5%;
     }
     22% {
-      opacity: 1;
+      opacity: .7;
       top: 0;
     }
     23% {
@@ -541,10 +541,10 @@ export default {
       opacity: 0;
     }
     31% {
-      opacity: 1;
+      opacity: .7;
     }
     32% {
-      opacity: 1;
+      opacity: .7;
     }
     33% {
       opacity: .2;
@@ -564,14 +564,14 @@ export default {
       opacity: 0;
     }
     45% {
-      opacity: 1;
+      opacity: .7;
     }
     79% {
       filter: hue-rotate(200deg);
       opacity: 0;
     }
     80% {
-      opacity: 1;
+      opacity: .7;
       top: 0;
       left: 0;
     }
