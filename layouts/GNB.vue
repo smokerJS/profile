@@ -51,7 +51,7 @@ export default {
       position: fixed;
       z-index: 100;
       right: 4.3%;
-      top: 9%;
+      top: 10.5%;
       text-align: right;
       width: 90px;
       height: 28px;
@@ -74,9 +74,19 @@ export default {
     @media (max-width: 1366px) {
       & > .btn-toggle {
         right: 5.5%;
-        top: 8.3%;
+        top: 10%;
         width: 80px;
         cursor: pointer;
+      }
+    }
+    @media (max-width: 1024px) {
+      & > .btn-toggle {
+        top: 10.1%;
+      }
+    }
+    @media (max-width: 800px) {
+      & > .btn-toggle {
+        top: 10.5%;
       }
     }
   }

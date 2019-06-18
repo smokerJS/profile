@@ -86,8 +86,6 @@ export default {
   }
   @media (max-width: 1024px) {
     .title-area {
-      top: 8.3%;
-      left: 5.5%;
       font-size:70px;
       line-height: 72px;
       & > span {

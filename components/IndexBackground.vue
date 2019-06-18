@@ -78,8 +78,9 @@ export default {
       transition-timing-function: ease-in-out;
       & > div {
         position: absolute;
-        width: 100%;
-        height: 100%;
+        left: -10%;
+        width: 120%;
+        height: 120vh;
         & > .background-line {
           position: absolute;
           width: 100%;
@@ -111,7 +112,7 @@ export default {
       & > .background {
         & > div {
           height: 80%;
-          left: -10%;
+          left: -20%;
           bottom: 0;
         }
       }
@@ -120,8 +121,17 @@ export default {
       & > .background {
         & > div {
           height: 65%;
-          left: -20%;
-          bottom: 0;
+          left: -30%;
+        }
+      }
+    }
+    @media (max-width: 800px) {
+      & > .background {
+        & > div {
+          width: 130%;
+          height: 50%;
+          left: -38%;
+          bottom: 5%;
         }
       }
     }

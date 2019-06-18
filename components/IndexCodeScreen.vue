@@ -236,6 +236,14 @@ export default {
         height: 18px;
       }
     }
+    @media (max-width: 800px) {
+      top: 70%;
+      left: 14vw;
+      font-size: 10px;
+      & > ul > li {
+        height: 12px;
+      }
+    }
   }
 
 
