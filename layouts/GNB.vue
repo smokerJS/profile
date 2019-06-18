@@ -84,7 +84,7 @@ export default {
         top: 10.1%;
       }
     }
-    @media (max-width: 800px) {
+    @media (max-width: 767px) {
       & > .btn-toggle {
         top: 10.5%;
       }
