@@ -324,16 +324,18 @@ export default {
     }
     80% {
       opacity: .7;
-      top: 0;
-      left: 0;
+      top: 0.5%;
+      left: 1%;
     }
     81% {
-      opacity: .5;
+      opacity: .2;
       top: -0.5%;
+      left: -1%;
     }
     82% {
-      opacity: .5;
-      top: -0.5%;
+      opacity: .4;
+      top: 1%;
+      left: 0;
     }
     83% {
       opacity: 0;
@@ -441,6 +443,7 @@ export default {
     }
     45% {
       opacity: .7;
+      top: 1%;
     }
     79% {
       filter: hue-rotate(1200deg);
@@ -452,25 +455,25 @@ export default {
       left: 0;
     }
     81% {
-      opacity: .5;
+      opacity: .1;
       top: -0.1%;
     }
     82% {
       opacity: .5;
-      top: -0.2%;
+      top: 2%;
     }
     83% {
-      opacity: 0;
+      opacity: .3;
       top: 0;
       left: 0;
     }
     84% {
-      opacity: .6;
+      opacity: .5;
       top: 0;
-      left: 0.2%;
+      left: -2%;
     }
     85% {
-      opacity: .7;
+      opacity: .1;
       top: 0;
       left: 0;
     }
@@ -565,6 +568,7 @@ export default {
     }
     45% {
       opacity: .7;
+      left: -2%;
     }
     79% {
       filter: hue-rotate(200deg);
@@ -595,7 +599,7 @@ export default {
     }
     85% {
       opacity: .7;
-      top: 0;
+      top: -1%;
       left: 0;
     }
     86% {
