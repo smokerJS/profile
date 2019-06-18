@@ -147,7 +147,7 @@ export default {
 <style lang="scss" scope>
   .index-code-screen {
     position: absolute;
-    top: 50%;
+    top: 60%;
     right: 8%;
     z-index: 4;
     font-size: 20px;

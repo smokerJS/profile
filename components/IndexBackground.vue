@@ -12,7 +12,6 @@
         <div class="background-line-over filter-1"></div>
         <div class="background-line-over filter-2"></div>
         <div class="background-line-over filter-3"></div>
-        <!-- <div class="background-filter"></div> -->
         <IndexCodeScreen/>
       </div>
     </div>
@@ -101,15 +100,6 @@ export default {
         &.filter-3 {
           animation: line-over-ani-3 10s infinite;
         }
-      }
-      & > .background-filter {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: url("../assets/images/index/img_background_filter.png") no-repeat center;
-        background-size: cover;
-        //animation: filter-ani 10s infinite;
-        z-index: 2;
       }
     }
   }
