@@ -101,6 +101,30 @@ export default {
         }
       }
     }
+  @media (max-height: 500px) {
+    .title-area {
+      font-size:50px;
+      line-height: 44px;
+      letter-spacing: 5px;
+      top: 4%;
+      left: 3%;
+      & > span {
+        padding-left: 7px;
+        height: 46px;
+        &.middle-text {
+          background-color: rgb(0, 0, 255);
+          height: 48px;
+          width: 270px;
+          margin: 0 0;
+        }
+        &.last-text {
+          margin-top: -2px;
+        }
+        & > strong {
+          padding-right: 45%;
+        }
+      }
+    }
   }
-
+}
 </style>

@@ -244,6 +244,14 @@ export default {
         height: 12px;
       }
     }
+    @media (max-height: 500px) {
+      top: 60%;
+      left: 50vw;
+      font-size: 9px;
+      & > ul > li {
+        height: 11px;
+      }
+    }
   }
 
 

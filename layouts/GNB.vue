@@ -89,6 +89,12 @@ export default {
         top: 10.5%;
       }
     }
+    @media (max-height: 500px) {
+      & > .btn-toggle {
+        right: 3%;
+        top: 4.8%;
+      }
+    }
   }
 
   @keyframes nav-background-open-ani {
