@@ -9,6 +9,7 @@
         }"
       >
         <div class="background-line"></div>
+        <div class="background-line-over"></div>
         <div class="background-filter"></div>
         <IndexCodeScreen/>
       </div>
@@ -57,13 +58,6 @@ export default {
 </script>
 
 <style lang="scss" scope>
-  .index-background-cover {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(255,255,255,.2);
-    z-index: 2;
-  }
   .index-background-group {
     position: absolute;
     width: 120%;
@@ -89,6 +83,15 @@ export default {
         // animation: filter-ani 10s infinite;
         z-index: 3;
       }
+      & > .background-line-over {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url("../assets/images/index/img_background_line_over.png") no-repeat center;
+        background-size: cover;
+        animation: line-over-ani 10s infinite;
+        z-index: 3;
+      }
       & > .background-filter {
         position: absolute;
         width: 100%;
@@ -102,6 +105,130 @@ export default {
   }
 
   @keyframes filter-ani {
+    0% {
+      filter: hue-rotate(0deg);
+      opacity: 0;
+    }
+    9% {
+      opacity: 0;
+    }
+    10% {
+      opacity: .4;
+      left: -0.2%;
+    }
+    11% {
+      opacity: .2;
+      left: 0.2%;
+    }
+    12% {
+      opacity: 1;
+      left: 0;
+    }
+    13% {
+      opacity: .2;
+      left: -0.1%;
+    }
+    14% {
+      opacity: 0;
+      left: 0;
+    }
+    19% {
+      opacity: 0;
+    }
+    20% {
+      opacity: .4;
+      top: -0.2%;
+    }
+    21% {
+      opacity: .2;
+      top: 0.3%;
+    }
+    22% {
+      opacity: 1;
+      top: 0;
+    }
+    23% {
+      opacity: .2;
+      top: -0.1%;
+    }
+    24% {
+      opacity: 0;
+      top: 0;
+    }
+    29% {
+      opacity: 0;
+    }
+    31% {
+      opacity: 1;
+    }
+    32% {
+      opacity: 1;
+    }
+    33% {
+      opacity: .2;
+      top: -0.1%;
+    }
+    34% {
+      opacity: .6;
+      top: 0;
+      left: .2%;
+    }
+    35% {
+      opacity: 0;
+      top: 0;
+      left: 0;
+    }
+    40% {
+      opacity: 0;
+    }
+    45% {
+      opacity: 1;
+    }
+    79% {
+      filter: hue-rotate(1000deg);
+      opacity: 0;
+    }
+    80% {
+      opacity: 1;
+      top: 0;
+      left: 0;
+    }
+    81% {
+      opacity: .5;
+      top: -0.1%;
+    }
+    82% {
+      opacity: .5;
+      top: -0.1%;
+    }
+    83% {
+      opacity: 0;
+      top: 0;
+      left: 0;
+    }
+    84% {
+      opacity: .6;
+      top: 0;
+      left: .3%;
+    }
+    85% {
+      opacity: .7;
+      top: 0;
+      left: 0;
+    }
+    86% {
+      opacity: 0;
+      top: 0;
+      left: 0;
+    }
+    100% {
+      opacity: 0;
+      top: 0;
+      left: 0;
+      filter: hue-rotate(1000deg);
+    }
+  }
+  @keyframes line-over-ani {
     0% {
       filter: hue-rotate(0deg);
       opacity: 0;
