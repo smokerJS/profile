@@ -154,10 +154,10 @@ export default {
     letter-spacing: 1.2px;
     font-weight: bold;
     font-family: "D2Coding";
+    // background-color: rgba(100,100,100,.5);
     & > ul {
       display: block;
       width: 660px;
-      height: 218px;
       & > li {
         height: 26px;
         clear: both;
@@ -217,6 +217,23 @@ export default {
         &.hidden {
           display: none;
         }
+      }
+    }
+    @media (max-width: 1366px) {
+      top: 55%;
+      right: 3%;
+      font-size: 16px;
+      letter-spacing: 1.2px;
+      & > ul > li {
+        height: 20px;
+      }
+    }
+    @media (max-width: 1024px) {
+      top: 62%;
+      right: -4%;
+      font-size: 15px;
+      & > ul > li {
+        height: 18px;
       }
     }
   }

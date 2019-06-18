@@ -2,16 +2,18 @@
   <div @mousemove="mouseMoveHandler">
     <IndexBackgroundCanvas/>
     <div class="index-background-group">
-      <div class="background-img"
+      <div class="background"
         :style="{
           marginLeft: this.moveX,
           marginTop: this.moveY
         }"
       >
-        <div class="background-line"></div>
-        <div class="background-line-over filter-1"></div>
-        <div class="background-line-over filter-2"></div>
-        <div class="background-line-over filter-3"></div>
+        <div>
+          <div class="background-line"></div>
+          <div class="background-line-over filter-1"></div>
+          <div class="background-line-over filter-2"></div>
+          <div class="background-line-over filter-3"></div>
+        </div>
         <IndexCodeScreen/>
       </div>
     </div>
@@ -66,39 +68,60 @@ export default {
     left: -10%;
     top: -10vh;
     z-index: 1;
-    & > .background-img {
+    & > .background {
       position: relative;
       width: 100%;
       height: 100%;
-      //background: url("../assets/images/index/img_background.jpg") no-repeat center;
       background-color: black;
       background-size: cover;
       transition: 1.5s;
       transition-timing-function: ease-in-out;
-      & > .background-line {
+      & > div {
         position: absolute;
         width: 100%;
         height: 100%;
-        background: url("../assets/images/index/img_background_line.png") no-repeat center;
-        background-size: cover;
-        // animation: filter-ani 10s infinite;
-        z-index: 3;
+        & > .background-line {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: url("../assets/images/index/img_background_line.png") no-repeat center;
+          background-size: cover;
+          z-index: 3;
+        }
+        & > .background-line-over {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: url("../assets/images/index/img_background_line_over.png") no-repeat center;
+          background-size: cover;
+          z-index: 3;
+          &.filter-1 {
+            animation: line-over-ani-1 10s infinite;
+          }
+          &.filter-2 {
+            animation: line-over-ani-2 10s infinite;
+          }
+          &.filter-3 {
+            animation: line-over-ani-3 10s infinite;
+          }
+        }
       }
-      & > .background-line-over {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: url("../assets/images/index/img_background_line_over.png") no-repeat center;
-        background-size: cover;
-        z-index: 3;
-        &.filter-1 {
-          animation: line-over-ani-1 10s infinite;
+    }
+    @media (max-width: 1366px) {
+      & > .background {
+        & > div {
+          height: 80%;
+          left: -10%;
+          bottom: 0;
         }
-        &.filter-2 {
-          animation: line-over-ani-2 10s infinite;
-        }
-        &.filter-3 {
-          animation: line-over-ani-3 10s infinite;
+      }
+    }
+    @media (max-width: 1024px) {
+      & > .background {
+        & > div {
+          height: 65%;
+          left: -20%;
+          bottom: 0;
         }
       }
     }

@@ -60,34 +60,53 @@ export default {
       }
     }
   }
-  @media (max-width: 1920px) {
-    & > .title-area {
-      top: 8%;
-      left: 8%;
-      @media (max-width: 1024px) {
-        font-size: 84px;
-        letter-spacing: 4px;
-        font-weight: bold;
-        line-height: 80px;
-        & > span {
-          display: block;
-          padding-left: 4px;
-          height: 80px;
-          &:nth-child(2) {
-            background-color: rgb(0, 0, 255);
-            height: 88px;
-            width: 70%;
-            margin: 0 0;
-          }
-          &:nth-child(3) {
-            margin-top: -8px;
-          }
-          & > strong {
-            padding-right: 48%;
-            background: linear-gradient(transparent 70%, rgb(0, 0, 255) 50%);
-          }
+  @media (max-width: 1366px) {
+    .title-area {
+      top: 8.3%;
+      left: 5.5%;
+      font-size:85px;
+      line-height: 90px;
+      & > span {
+        padding-left: 7px;
+        height: 85px;
+        &.middle-text {
+          background-color: rgb(0, 0, 255);
+          height: 100px;
+          width: 440px;
+          margin: 0 0;
+        }
+        &.last-text {
+          margin-top: -10px;
+        }
+        & > strong {
+          padding-right: 45%;
         }
       }
     }
   }
+  @media (max-width: 1024px) {
+    .title-area {
+      top: 8.3%;
+      left: 5.5%;
+      font-size:70px;
+      line-height: 72px;
+      & > span {
+        padding-left: 7px;
+        height: 70px;
+        &.middle-text {
+          background-color: rgb(0, 0, 255);
+          height: 80px;
+          width: 360px;
+          margin: 0 0;
+        }
+        &.last-text {
+          margin-top: -10px;
+        }
+        & > strong {
+          padding-right: 40%;
+        }
+      }
+    }
+  }
+
 </style>

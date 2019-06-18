@@ -50,7 +50,7 @@ export default {
     & > .btn-toggle {
       position: fixed;
       z-index: 100;
-      right: 3.6%;
+      right: 4.3%;
       top: 9%;
       text-align: right;
       width: 90px;
@@ -60,17 +60,24 @@ export default {
       background-color: #fff;
       overflow: hidden;
       cursor: pointer;
-      & > i {
-        font-family: "FightThis";
-        font-style: normal;
-        font-size: 18px;
-        color : rgb(0,0,255);
-      }
+        & > i {
+          font-family: "FightThis";
+          font-style: normal;
+          font-size: 18px;
+          color : rgb(0,0,255);
+        }
       }
       &.open {
-
       }
       &.off {
+    }
+    @media (max-width: 1366px) {
+      & > .btn-toggle {
+        right: 5.5%;
+        top: 8.3%;
+        width: 80px;
+        cursor: pointer;
+      }
     }
   }
 
