@@ -31,11 +31,12 @@ export default {
 <style lang="scss" scope>
   .title-area {
     position: absolute;
-    top: 15%;
-    left: 15%;
+    top: 9%;
+    left: 4.3%;
     z-index: 11;
     font-family: "FightThis";
     font-size: 100px;
+    color: #fff;
     letter-spacing: 5px;
     font-weight: bold;
     line-height: 100px;
@@ -45,7 +46,7 @@ export default {
       padding-left: 5px;
       height: 100px;
       &.middle-text {
-        background-color: #fff;
+        background-color: rgb(0, 0, 255);
         height: 110px;
         width: 480px;
         margin: 0 0;
@@ -55,7 +56,7 @@ export default {
       }
       & > strong {
         padding-right: 50%;
-        background: linear-gradient(transparent 70%, rgb(255, 255, 255) 50%);
+        background: linear-gradient(transparent 70%, rgb(0, 0, 255) 50%);
       }
     }
   }
@@ -64,7 +65,7 @@ export default {
       top: 8%;
       left: 8%;
       @media (max-width: 1024px) {
-        font-size: 80px;
+        font-size: 84px;
         letter-spacing: 4px;
         font-weight: bold;
         line-height: 80px;
@@ -73,7 +74,7 @@ export default {
           padding-left: 4px;
           height: 80px;
           &:nth-child(2) {
-            background-color: #fff;
+            background-color: rgb(0, 0, 255);
             height: 88px;
             width: 70%;
             margin: 0 0;
@@ -82,8 +83,8 @@ export default {
             margin-top: -8px;
           }
           & > strong {
-            padding-right: 50%;
-            background: linear-gradient(transparent 70%, rgb(255, 255, 255) 50%);
+            padding-right: 48%;
+            background: linear-gradient(transparent 70%, rgb(0, 0, 255) 50%);
           }
         }
       }
