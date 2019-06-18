@@ -37,7 +37,7 @@ export default {
     font-family: "FightThis";
     font-size: 100px;
     color: #fff;
-    letter-spacing: 5px;
+    letter-spacing: 15px;
     font-weight: bold;
     line-height: 100px;
     transition: .1s;
@@ -46,16 +46,16 @@ export default {
       padding-left: 5px;
       height: 100px;
       &.middle-text {
-        background-color: rgb(0, 0, 255);
+        background-color: blue;
         height: 110px;
-        width: 480px;
+        width: 600px;
         margin: 0 0;
       }
       &.last-text {
         margin-top: -10px;
       }
       & > strong {
-        padding-right: 50%;
+        padding-right: 40%;
         background: linear-gradient(transparent 70%, rgb(0, 0, 255) 50%);
       }
     }
@@ -66,20 +66,18 @@ export default {
       left: 5.5%;
       font-size:85px;
       line-height: 90px;
+      letter-spacing: 10px;
       & > span {
         padding-left: 7px;
         height: 85px;
         &.middle-text {
           background-color: rgb(0, 0, 255);
           height: 100px;
-          width: 440px;
+          width: 480px;
           margin: 0 0;
         }
         &.last-text {
           margin-top: -10px;
-        }
-        & > strong {
-          padding-right: 45%;
         }
       }
     }
@@ -88,20 +86,18 @@ export default {
     .title-area {
       font-size:70px;
       line-height: 72px;
+      letter-spacing: 5px;
       & > span {
         padding-left: 7px;
         height: 70px;
         &.middle-text {
           background-color: rgb(0, 0, 255);
           height: 80px;
-          width: 360px;
+          width: 350px;
           margin: 0 0;
         }
         &.last-text {
           margin-top: -10px;
-        }
-        & > strong {
-          padding-right: 40%;
         }
       }
     }
