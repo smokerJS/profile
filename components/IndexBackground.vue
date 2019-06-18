@@ -135,6 +135,16 @@ export default {
         }
       }
     }
+    @media (max-height: 500px) {
+      & > .background {
+        & > div {
+          width: 130%;
+          height: 50%;
+          left: -45%;
+          bottom: 5%;
+        }
+      }
+    }
   }
 
   @keyframes filter-ani {
