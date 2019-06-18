@@ -9,8 +9,10 @@
         }"
       >
         <div class="background-line"></div>
-        <div class="background-line-over"></div>
-        <div class="background-filter"></div>
+        <div class="background-line-over filter-1"></div>
+        <div class="background-line-over filter-2"></div>
+        <div class="background-line-over filter-3"></div>
+        <!-- <div class="background-filter"></div> -->
         <IndexCodeScreen/>
       </div>
     </div>
@@ -89,8 +91,16 @@ export default {
         height: 100%;
         background: url("../assets/images/index/img_background_line_over.png") no-repeat center;
         background-size: cover;
-        animation: line-over-ani 10s infinite;
         z-index: 3;
+        &.filter-1 {
+          animation: line-over-ani-1 10s infinite;
+        }
+        &.filter-2 {
+          animation: line-over-ani-2 10s infinite;
+        }
+        &.filter-3 {
+          animation: line-over-ani-3 10s infinite;
+        }
       }
       & > .background-filter {
         position: absolute;
@@ -98,7 +108,7 @@ export default {
         height: 100%;
         background: url("../assets/images/index/img_background_filter.png") no-repeat center;
         background-size: cover;
-        animation: filter-ani 10s infinite;
+        //animation: filter-ani 10s infinite;
         z-index: 2;
       }
     }
@@ -228,7 +238,7 @@ export default {
       filter: hue-rotate(1000deg);
     }
   }
-  @keyframes line-over-ani {
+  @keyframes line-over-ani-1 {
     0% {
       filter: hue-rotate(0deg);
       opacity: 0;
@@ -238,11 +248,11 @@ export default {
     }
     10% {
       opacity: .4;
-      left: -0.2%;
+      left: -1%;
     }
     11% {
       opacity: .2;
-      left: 0.2%;
+      left: 1%;
     }
     12% {
       opacity: 1;
@@ -250,7 +260,7 @@ export default {
     }
     13% {
       opacity: .2;
-      left: -0.1%;
+      left: -0.5%;
     }
     14% {
       opacity: 0;
@@ -261,11 +271,11 @@ export default {
     }
     20% {
       opacity: .4;
-      top: -0.2%;
+      top: -1%;
     }
     21% {
       opacity: .2;
-      top: 0.3%;
+      top: 1.5%;
     }
     22% {
       opacity: 1;
@@ -273,7 +283,7 @@ export default {
     }
     23% {
       opacity: .2;
-      top: -0.1%;
+      top: -0.5%;
     }
     24% {
       opacity: 0;
@@ -290,12 +300,12 @@ export default {
     }
     33% {
       opacity: .2;
-      top: -0.1%;
+      top: -0.5%;
     }
     34% {
       opacity: .6;
       top: 0;
-      left: .2%;
+      left: 2%;
     }
     35% {
       opacity: 0;
@@ -319,11 +329,11 @@ export default {
     }
     81% {
       opacity: .5;
-      top: -0.1%;
+      top: -0.5%;
     }
     82% {
       opacity: .5;
-      top: -0.1%;
+      top: -0.5%;
     }
     83% {
       opacity: 0;
@@ -333,7 +343,7 @@ export default {
     84% {
       opacity: .6;
       top: 0;
-      left: .3%;
+      left: 2%;
     }
     85% {
       opacity: .7;
@@ -350,6 +360,254 @@ export default {
       top: 0;
       left: 0;
       filter: hue-rotate(1000deg);
+    }
+  }
+    @keyframes line-over-ani-2 {
+    0% {
+      filter: hue-rotate(300deg);
+      opacity: 0;
+    }
+    9% {
+      opacity: 0;
+    }
+    10% {
+      opacity: .4;
+      left: -0.4%;
+    }
+    11% {
+      opacity: .2;
+      left: 0.2%;
+    }
+    12% {
+      opacity: 1;
+      left: 0;
+    }
+    13% {
+      opacity: .2;
+      left: -0.1%;
+    }
+    14% {
+      opacity: 0;
+      left: 0;
+    }
+    19% {
+      opacity: 0;
+    }
+    20% {
+      opacity: .4;
+      top: -0.4%;
+    }
+    21% {
+      opacity: .2;
+      top: 0.5%;
+    }
+    22% {
+      opacity: 1;
+      top: 0;
+    }
+    23% {
+      opacity: .2;
+      top: -0.2%;
+    }
+    24% {
+      opacity: 0;
+      top: 0;
+    }
+    29% {
+      opacity: 0;
+    }
+    31% {
+      opacity: 1;
+    }
+    32% {
+      opacity: 1;
+    }
+    33% {
+      opacity: .2;
+      top: -0.2%;
+    }
+    34% {
+      opacity: .6;
+      top: 0;
+      left: 0.4%;
+    }
+    35% {
+      opacity: 0;
+      top: 0;
+      left: 0;
+    }
+    40% {
+      opacity: 0;
+    }
+    45% {
+      opacity: 1;
+    }
+    79% {
+      filter: hue-rotate(1200deg);
+      opacity: 0;
+    }
+    80% {
+      opacity: 1;
+      top: 0;
+      left: 0;
+    }
+    81% {
+      opacity: .5;
+      top: -0.1%;
+    }
+    82% {
+      opacity: .5;
+      top: -0.2%;
+    }
+    83% {
+      opacity: 0;
+      top: 0;
+      left: 0;
+    }
+    84% {
+      opacity: .6;
+      top: 0;
+      left: 0.2%;
+    }
+    85% {
+      opacity: .7;
+      top: 0;
+      left: 0;
+    }
+    86% {
+      opacity: 0;
+      top: 0;
+      left: 0;
+    }
+    100% {
+      opacity: 0;
+      top: 0;
+      left: 0;
+      filter: hue-rotate(500deg);
+    }
+  }
+    @keyframes line-over-ani-3 {
+    0% {
+      filter: hue-rotate(2000deg);
+      opacity: 0;
+    }
+    9% {
+      opacity: 0;
+    }
+    10% {
+      opacity: .4;
+      left: 1%;
+    }
+    11% {
+      opacity: .2;
+      left: -1%;
+    }
+    12% {
+      opacity: 1;
+      left: 0;
+    }
+    13% {
+      opacity: .2;
+      left: 0.5%;
+    }
+    14% {
+      opacity: 0;
+      left: 0;
+    }
+    19% {
+      opacity: 0;
+    }
+    20% {
+      opacity: .4;
+      top: 1%;
+    }
+    21% {
+      opacity: .2;
+      top: -1.5%;
+    }
+    22% {
+      opacity: 1;
+      top: 0;
+    }
+    23% {
+      opacity: .2;
+      top: 0.5%;
+    }
+    24% {
+      opacity: 0;
+      top: 0;
+    }
+    29% {
+      opacity: 0;
+    }
+    31% {
+      opacity: 1;
+    }
+    32% {
+      opacity: 1;
+    }
+    33% {
+      opacity: .2;
+      top: 0.5%;
+    }
+    34% {
+      opacity: .6;
+      top: 0;
+      left: -2%;
+    }
+    35% {
+      opacity: 0;
+      top: 0;
+      left: 0;
+    }
+    40% {
+      opacity: 0;
+    }
+    45% {
+      opacity: 1;
+    }
+    79% {
+      filter: hue-rotate(200deg);
+      opacity: 0;
+    }
+    80% {
+      opacity: 1;
+      top: 0;
+      left: 0;
+    }
+    81% {
+      opacity: .5;
+      top: 0.5%;
+    }
+    82% {
+      opacity: .5;
+      top: 0.5%;
+    }
+    83% {
+      opacity: 0;
+      top: 0;
+      left: 0;
+    }
+    84% {
+      opacity: .6;
+      top: 0;
+      left: -2%;
+    }
+    85% {
+      opacity: .7;
+      top: 0;
+      left: 0;
+    }
+    86% {
+      opacity: 0;
+      top: 0;
+      left: 0;
+    }
+    100% {
+      opacity: 0;
+      top: 0;
+      left: 0;
+      filter: hue-rotate(700deg);
     }
   }
 </style>
