@@ -56,6 +56,15 @@ export default {
       right: 8px;
       bottom: 5px;
       z-index: 111;
+      @media (max-width: 1024px) {
+        font-size: 11px;
+      }
+      @media (max-width: 767px) {
+        font-size: 10px;
+      }
+      @media (max-height: 500px) {
+        font-size: 9px;
+      }
     }
   }
 </style>
