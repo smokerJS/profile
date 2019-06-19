@@ -147,130 +147,6 @@ export default {
     }
   }
 
-  @keyframes filter-ani {
-    0% {
-      filter: hue-rotate(0deg);
-      opacity: 0;
-    }
-    9% {
-      opacity: 0;
-    }
-    10% {
-      opacity: .4;
-      left: -0.2%;
-    }
-    11% {
-      opacity: .2;
-      left: 0.2%;
-    }
-    12% {
-      opacity: .7;
-      left: 0;
-    }
-    13% {
-      opacity: .2;
-      left: -0.1%;
-    }
-    14% {
-      opacity: 0;
-      left: 0;
-    }
-    19% {
-      opacity: 0;
-    }
-    20% {
-      opacity: .4;
-      top: -0.2%;
-    }
-    21% {
-      opacity: .2;
-      top: 0.3%;
-    }
-    22% {
-      opacity: .7;
-      top: 0;
-    }
-    23% {
-      opacity: .2;
-      top: -0.1%;
-    }
-    24% {
-      opacity: 0;
-      top: 0;
-    }
-    29% {
-      opacity: 0;
-    }
-    31% {
-      opacity: .7;
-    }
-    32% {
-      opacity: .7;
-    }
-    33% {
-      opacity: .2;
-      top: -0.1%;
-    }
-    34% {
-      opacity: .6;
-      top: 0;
-      left: .2%;
-    }
-    35% {
-      opacity: 0;
-      top: 0;
-      left: 0;
-    }
-    40% {
-      opacity: 0;
-    }
-    45% {
-      opacity: .7;
-    }
-    79% {
-      filter: hue-rotate(1000deg);
-      opacity: 0;
-    }
-    80% {
-      opacity: .7;
-      top: 0;
-      left: 0;
-    }
-    81% {
-      opacity: .5;
-      top: -0.1%;
-    }
-    82% {
-      opacity: .5;
-      top: -0.1%;
-    }
-    83% {
-      opacity: 0;
-      top: 0;
-      left: 0;
-    }
-    84% {
-      opacity: .6;
-      top: 0;
-      left: .3%;
-    }
-    85% {
-      opacity: .7;
-      top: 0;
-      left: 0;
-    }
-    86% {
-      opacity: 0;
-      top: 0;
-      left: 0;
-    }
-    100% {
-      opacity: 0;
-      top: 0;
-      left: 0;
-      filter: hue-rotate(1000deg);
-    }
-  }
   @keyframes line-over-ani-1 {
     0% {
       filter: hue-rotate(0deg);
@@ -281,46 +157,46 @@ export default {
     }
     10% {
       opacity: .4;
-      left: -1%;
+      transform: translate(-1%,0%);
     }
     11% {
       opacity: .2;
-      left: 1%;
+      transform: translate(1%,0%);
     }
     12% {
       opacity: .7;
-      left: 0;
+      transform: translate(0%,1%);
     }
     13% {
       opacity: .2;
-      left: -0.5%;
+      transform: translate(-0.5%,-1%);
     }
     14% {
       opacity: 0;
-      left: 0;
+      transform: translate(0%,0%);
     }
     19% {
       opacity: 0;
     }
     20% {
       opacity: .4;
-      top: -1%;
+      transform: translate(0%,-1%);
     }
     21% {
       opacity: .2;
-      top: 1.5%;
+      transform: translate(0%,1.5%);
     }
     22% {
       opacity: .7;
-      top: 0;
+      transform: translate(0%,0%);
     }
     23% {
       opacity: .2;
-      top: -0.5%;
+      transform: translate(0%,-0.5%);
     }
     24% {
       opacity: 0;
-      top: 0;
+      transform: translate(0%,0%);
     }
     29% {
       opacity: 0;
@@ -333,67 +209,59 @@ export default {
     }
     33% {
       opacity: .2;
-      top: -0.5%;
+      transform: translate(0%,-0.5%);
     }
     34% {
       opacity: .6;
-      top: 0;
-      left: 2%;
+      transform: translate(2%,0%);
     }
     35% {
       opacity: 0;
-      top: 0;
-      left: 0;
+      transform: translate(0%,1%);
     }
     40% {
       opacity: 0;
+      transform: translate(0%,0%);
     }
     45% {
       opacity: .7;
     }
     79% {
       filter: hue-rotate(1000deg);
+      transform: translate(0%,0%);
       opacity: 0;
     }
     80% {
       opacity: .7;
-      top: 0.5%;
-      left: 1%;
+      transform: translate(1%,0.5%);
     }
     81% {
       opacity: .2;
-      top: -0.5%;
-      left: -1%;
+      transform: translate(-1%,-0.5%);
     }
     82% {
       opacity: .4;
-      top: 1%;
-      left: 0;
+      transform: translate(0%,1%);
     }
     83% {
       opacity: 0;
-      top: 0;
-      left: 0;
+      transform: translate(0%,0%);
     }
     84% {
       opacity: .6;
-      top: 0;
-      left: 2%;
+      transform: translate(2%,0%);
     }
     85% {
       opacity: .7;
-      top: 0;
-      left: 0;
+      transform: translate(0%,0%);
     }
     86% {
       opacity: 0;
-      top: 0;
-      left: 0;
+      transform: translate(0%,0%);
     }
     100% {
       opacity: 0;
-      top: 0;
-      left: 0;
+      transform: translate(0%,0%);
       filter: hue-rotate(1000deg);
     }
   }
@@ -407,46 +275,46 @@ export default {
     }
     10% {
       opacity: .4;
-      left: -0.4%;
+      transform: translate(-0.4%,0%);
     }
     11% {
       opacity: .2;
-      left: 0.2%;
+      transform: translate(0.2%,0%);
     }
     12% {
       opacity: .7;
-      left: 0;
+      transform: translate(0%,0%);
     }
     13% {
       opacity: .2;
-      left: -0.1%;
+      transform: translate(-0.1%,0%);
     }
     14% {
       opacity: 0;
-      left: 0;
+      transform: translate(0%,0%);
     }
     19% {
       opacity: 0;
     }
     20% {
       opacity: .4;
-      top: -0.4%;
+      transform: translate(0%,-0.4%);
     }
     21% {
       opacity: .2;
-      top: 0.5%;
+      transform: translate(0%,0.5%);
     }
     22% {
       opacity: .7;
-      top: 0;
+      transform: translate(0%,0%);
     }
     23% {
       opacity: .2;
-      top: -0.2%;
+      transform: translate(0%,-0.2%);
     }
     24% {
       opacity: 0;
-      top: 0;
+      transform: translate(0%,0%);
     }
     29% {
       opacity: 0;
@@ -459,24 +327,22 @@ export default {
     }
     33% {
       opacity: .2;
-      top: -0.2%;
+      transform: translate(0%,-0.2%);
     }
     34% {
       opacity: .6;
-      top: 0;
-      left: 0.4%;
+      transform: translate(0.4%,0%);
     }
     35% {
       opacity: 0;
-      top: 0;
-      left: 0;
+      transform: translate(0%,0%);
     }
     40% {
       opacity: 0;
     }
     45% {
       opacity: .7;
-      top: 1%;
+      transform: translate(0%,1%);
     }
     79% {
       filter: hue-rotate(1200deg);
@@ -484,41 +350,35 @@ export default {
     }
     80% {
       opacity: .7;
-      top: 0;
-      left: 0;
+      transform: translate(0%,0%);
     }
     81% {
       opacity: .1;
-      top: -0.1%;
+      transform: translate(0%,-0.1%);
     }
     82% {
       opacity: .5;
-      top: 2%;
+      transform: translate(0%,2%);
     }
     83% {
       opacity: .3;
-      top: 0;
-      left: 0;
+      transform: translate(0%,0%);
     }
     84% {
       opacity: .5;
-      top: 0;
-      left: -2%;
+      transform: translate(-2%,0%);
     }
     85% {
       opacity: .1;
-      top: 0;
-      left: 0;
+      transform: translate(0%,0%);
     }
     86% {
       opacity: 0;
-      top: 0;
-      left: 0;
+      transform: translate(0%,0%);
     }
     100% {
       opacity: 0;
-      top: 0;
-      left: 0;
+      transform: translate(0%,0%);
       filter: hue-rotate(500deg);
     }
   }
@@ -532,46 +392,46 @@ export default {
     }
     10% {
       opacity: .4;
-      left: 1%;
+      transform: translate(1%,0%);
     }
     11% {
       opacity: .2;
-      left: -1%;
+      transform: translate(-1%,0%);
     }
     12% {
       opacity: .7;
-      left: 0;
+      transform: translate(0%,0%);
     }
     13% {
       opacity: .2;
-      left: 0.5%;
+      transform: translate(0.5%,0%);
     }
     14% {
       opacity: 0;
-      left: 0;
+      transform: translate(0%,0%);
     }
     19% {
       opacity: 0;
     }
     20% {
       opacity: .4;
-      top: 1%;
+      transform: translate(0%,1%);
     }
     21% {
       opacity: .2;
-      top: -1.5%;
+      transform: translate(0%,-1.5%);
     }
     22% {
       opacity: .7;
-      top: 0;
+      transform: translate(0%,0%);
     }
     23% {
       opacity: .2;
-      top: 0.5%;
+      transform: translate(0%,0.5%);
     }
     24% {
       opacity: 0;
-      top: 0;
+      transform: translate(0%,0%);
     }
     29% {
       opacity: 0;
@@ -584,24 +444,22 @@ export default {
     }
     33% {
       opacity: .2;
-      top: 0.5%;
+      transform: translate(0%,0.5%);
     }
     34% {
       opacity: .6;
-      top: 0;
-      left: -2%;
+      transform: translate(-2%,0%);
     }
     35% {
       opacity: 0;
-      top: 0;
-      left: 0;
+      transform: translate(0%,0%);
     }
     40% {
       opacity: 0;
     }
     45% {
       opacity: .7;
-      left: -2%;
+      transform: translate(-2%,0%);
     }
     79% {
       filter: hue-rotate(200deg);
@@ -609,41 +467,35 @@ export default {
     }
     80% {
       opacity: .7;
-      top: 0;
-      left: 0;
+      transform: translate(0%,0%);
     }
     81% {
       opacity: .5;
-      top: 0.5%;
+      transform: translate(0%,0.5%);
     }
     82% {
       opacity: .5;
-      top: 0.5%;
+      transform: translate(0%,0.5%);
     }
     83% {
       opacity: 0;
-      top: 0;
-      left: 0;
+      transform: translate(0%,0%);
     }
     84% {
       opacity: .6;
-      top: 0;
-      left: -2%;
+      transform: translate(-2%,0%);
     }
     85% {
       opacity: .7;
-      top: -1%;
-      left: 0;
+      transform: translate(0%,-1%);
     }
     86% {
       opacity: 0;
-      top: 0;
-      left: 0;
+      transform: translate(0%,0%);
     }
     100% {
       opacity: 0;
-      top: 0;
-      left: 0;
+      transform: translate(0%,0%);
       filter: hue-rotate(700deg);
     }
   }
