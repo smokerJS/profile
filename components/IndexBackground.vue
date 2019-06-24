@@ -157,19 +157,19 @@ export default {
     }
     10% {
       opacity: .4;
-      transform: translate(-1%,0%);
+      transform: translate(-1.5%,0%);
     }
     11% {
       opacity: .2;
-      transform: translate(1%,0%);
+      transform: translate(1%,1%);
     }
     12% {
       opacity: .7;
-      transform: translate(0%,1%);
+      transform: translate(0%,-1%);
     }
     13% {
       opacity: .2;
-      transform: translate(-0.5%,-1%);
+      transform: translate(-0.5%,0%);
     }
     14% {
       opacity: 0;
@@ -213,18 +213,15 @@ export default {
     }
     34% {
       opacity: .6;
-      transform: translate(2%,0%);
+      transform: translate(1%,0%);
     }
     35% {
-      opacity: 0;
-      transform: translate(0%,1%);
+      opacity: .2;
+      transform: translate(-0.5%,1%);
     }
-    40% {
+    36% {
       opacity: 0;
       transform: translate(0%,0%);
-    }
-    45% {
-      opacity: .7;
     }
     79% {
       filter: hue-rotate(1000deg);
@@ -337,19 +334,39 @@ export default {
       opacity: 0;
       transform: translate(0%,0%);
     }
+    36% {
+      opacity: .5;
+      transform: translate(-1%,1%);
+    }
+    37% {
+      opacity: 0;
+      transform: translate(0%,0%);
+    }
     40% {
       opacity: 0;
     }
+    41% {
+      opacity: .3;
+      transform: translate(1%,0%);
+    }
+    42% {
+      opacity: 0;
+      transform: translate(0%,0%);
+    }
+    43% {
+      opacity: .4;
+      transform: translate(0.5%,-1%);
+    }
+    44% {
+      opacity: 0;
+      transform: translate(0%,0%);
+    }
     45% {
-      opacity: .7;
-      transform: translate(0%,1%);
+      opacity: .8;
+      transform: translate(-1%,0%);
     }
     46% {
-      opacity: .1;
-      transform: translate(1%,-1%);
-    }
-    47% {
-      opacity: .3;
+      opacity: 0;
       transform: translate(0%,0%);
     }
     79% {
@@ -465,9 +482,17 @@ export default {
     40% {
       opacity: 0;
     }
+    42% {
+      opacity: .3;
+      transform: translate(-1%,0%);
+    }
+    43% {
+      opacity: .1;
+      transform: translate(0.5%,-1%);
+    }
     45% {
-      opacity: .7;
-      transform: translate(-2%,0%);
+      opacity: 0;
+      transform: translate(0%,0%);
     }
     79% {
       filter: hue-rotate(200deg);
