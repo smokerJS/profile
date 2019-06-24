@@ -344,6 +344,14 @@ export default {
       opacity: .7;
       transform: translate(0%,1%);
     }
+    46% {
+      opacity: .1;
+      transform: translate(1%,-1%);
+    }
+    47% {
+      opacity: .3;
+      transform: translate(0%,0%);
+    }
     79% {
       filter: hue-rotate(1200deg);
       opacity: 0;
