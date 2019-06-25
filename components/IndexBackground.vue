@@ -223,6 +223,26 @@ export default {
       opacity: 0;
       transform: translate(0%,0%);
     }
+    44% {
+      opacity: 0;
+      transform: translate(0%,0%);
+    }
+    45% {
+      opacity: .5;
+      transform: translate(0.5%,-1%);
+    }
+    46% {
+      opacity: .2;
+      transform: translate(-0.5%,0.5%);
+    }
+    47% {
+      opacity: .6;
+      transform: translate(1%,-0.5%);
+    }
+    48% {
+      opacity: 0;
+      transform: translate(0%,0%);
+    }
     79% {
       filter: hue-rotate(1000deg);
       transform: translate(0%,0%);
@@ -489,6 +509,10 @@ export default {
     43% {
       opacity: .1;
       transform: translate(0.5%,-1%);
+    }
+    44% {
+      opacity: 0;
+      transform: translate(0%,0%);
     }
     45% {
       opacity: 0;
