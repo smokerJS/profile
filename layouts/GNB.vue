@@ -3,9 +3,14 @@
     <button class="btn-toggle" :class="this.toggleNav" @click="toggleNavHandler">
       <i>MENU</i>
     </button>
-    <ul class="global-nav-menu" :class="this.toggleNav">
+    <div class="global-nav-menu" :class="this.toggleNav">
       <div class="global-nav-background"></div>
-    </ul>
+      <ul>
+        <li>
+          <a href="https://drive.google.com/open?id=1HKSkvH0TYfE2ZZ33VSaVJiDyDIKI0qey" target="_blank">Portfolio</a>
+        </li>
+      </ul>
+    </div>
   </nav>
 </template>
 
@@ -41,9 +46,18 @@ export default {
       }
       &.open {
         animation: nav-background-open-ani 6s ease forwards;
+        & > ul {
+          display: block;
+        }
       }
       &.off {
         animation: nav-background-off-ani 2s ease forwards;
+        & > ul {
+          display: none;
+        }
+      }
+      & > ul {
+        display: none;
       }
     }
 
@@ -124,7 +138,6 @@ export default {
     0% {
       width: 100%;
       background-position:0% 50%;
-
     }
     50% {
       background-position:100% 50%;
