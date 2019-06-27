@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-frame">
+  <div id="layout" class="layout-frame">
     <GNB/>
     <nuxt />
     <div class="license">
