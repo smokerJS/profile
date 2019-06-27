@@ -1,5 +1,11 @@
 <template>
   <div id="menuCanvasArea" ref="menuCanvasArea">
+    <canvas id="viewCanvas" ref="viewCanvas" :style="{
+      position: 'fixed',
+      width: '100%',
+      height: '100%',
+      'z-index': '2'
+    }"></canvas>
   </div>
 </template>
 
@@ -9,14 +15,47 @@ export default {
   name: "menu-canvas",
   data: function() {
     return {
+      verticalSlices : 0,
+      ctx : null,
+      subCanvas : null,
+      viewHeight : 0,
+      viewWidth : 0,
+      suvHeight : 0,
+      suvWidth : 0,
     };
   },
   methods: {
-
+    getRandom(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    },
+    loop() {
+      const verticalSlices = this.verticalSlices;
+      for (let i = 0; i < 100; i+= 0.5)  {
+        let horizOffset = this.getRandom(-Math.abs(20), 20);
+        this.ctx.drawImage(
+          this.subCanvas,
+          0,
+          i * this.subHeight,
+          this.subCanvas.width,
+          i * this.subHeight + this.subHeight,
+          horizOffset,
+          i * this.viewHeight,
+          this.viewWidth,
+          i * this.viewHeight + this.viewHeight
+        )
+      }
+      requestAnimationFrame(this.loop);
+    }
   },
   mounted() {
     html2canvas(document.getElementById('layout')).then(canvas => {
-      this.$refs.menuCanvasArea.appendChild(canvas)
+      this.subCanvas = canvas;
+      this.viewHeight = Math.round(this.$refs.viewCanvas.height / 100);
+      this.viewWidth = this.$refs.viewCanvas.width;
+      this.subHeight = Math.round(this.subCanvas.height / 100);
+      this.subwWidth = this.subCanvas.width
+      this.ctx = this.$refs.viewCanvas.getContext("2d");
+      this.loop();
     });
   }
 };
@@ -28,5 +67,11 @@ export default {
     width: 100%;
     height: 100vh;
     z-index: 50;
+    & > #viewCanvas {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
   }
 </style>
