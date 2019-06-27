@@ -1,10 +1,10 @@
 <template>
-  <canvas ref="canvas" class="index-background-canvas"></canvas>
+  <canvas ref="canvas" class="menu-canvas"></canvas>
 </template>
 
 <script>
 export default {
-  name: "index-background-canvas",
+  name: "menu-canvas",
   data: function() {
     return {
       viewWidth: 0,
@@ -15,7 +15,7 @@ export default {
       patternScaleX: 2,
       patternScaleY: 1,
       patternRefreshInterval: 3,
-      patternAlpha: 25,
+      patternAlpha: 40,
       patternPixelDataLength: 2 * 2 * 4,
       patternCanvas: null,
       patternCtx: null,
@@ -73,10 +73,10 @@ export default {
 </script>
 
 <style lang="scss" scope>
-  .index-background-canvas {
+  .menu-canvas {
     position: fixed;
     width: 100%;
     height: 100vh;
-    z-index: 2;
+    z-index: 50;
   }
 </style>
