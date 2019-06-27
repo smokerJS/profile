@@ -3,7 +3,7 @@
     <button class="btn-toggle" :class="this.toggleNav" @click="toggleNavHandler">
       <i>MENU</i>
     </button>
-    <MenuCanvas v-if="this.toggleNav"/>
+    <MenuCanvas v-show="this.toggleNav"/>
   </nav>
 </template>
 
