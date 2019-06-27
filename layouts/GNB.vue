@@ -1,9 +1,23 @@
 <template>
   <nav class="global-nav">
     <button class="btn-toggle" :class="this.toggleNav" @click="toggleNavHandler">
-      <i>MENU</i>
+      <i v-if="!this.toggleNav">MENU</i>
+      <i v-else>CLOSE</i>
     </button>
     <MenuCanvas v-show="this.toggleNav"/>
+    <div class="nav-screen" v-if="this.toggleNav">
+      <ul>
+        <li>
+          <a href="https://github.com/smokerJS" target="_blank">Github</a>
+        </li>
+        <li>
+          <a href="https://www.smoker.ga" target="_blank">Blog</a>
+        </li>
+        <li>
+          <a href="https://drive.google.com/open?id=1HKSkvH0TYfE2ZZ33VSaVJiDyDIKI0qey" target="_blank">Portfolio</a>
+        </li>
+      </ul>
+    </div>
   </nav>
 </template>
 
@@ -54,6 +68,26 @@ export default {
       &.open {
       }
       &.off {
+    }
+    & > .nav-screen {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0,0,255,.5);
+      z-index: 99;
+      & > ul {
+        position: absolute;
+        top: 10%;
+        left: 5%;;
+        font-family: "FightThis";
+        font-size: 100px;
+        & > li {
+          & > a {
+            color: #fff;
+            text-decoration: none;
+          }
+        }
+      }
     }
   }
 </style>
