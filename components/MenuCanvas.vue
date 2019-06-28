@@ -1,9 +1,9 @@
 <template>
   <div id="menuCanvasArea" ref="menuCanvasArea">
     <canvas id="viewCanvas" ref="viewCanvas" :style="{
-      position: 'fixed',
-      width: '100%',
-      height: '100%',
+      'position': 'fixed',
+      'width': '100%',
+      'height': '100%',
       'z-index': '2'
     }"></canvas>
   </div>
