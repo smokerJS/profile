@@ -83,6 +83,7 @@ export default {
         font-size: 100px;
         & > li {
           margin-bottom: -20px;
+          height: 120px;
           & > a {
             color: #fff;
             text-decoration: none;
