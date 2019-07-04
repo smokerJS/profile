@@ -82,6 +82,7 @@ export default {
         font-family: "FightThis";
         font-size: 100px;
         & > li {
+          margin-bottom: -20px;
           & > a {
             color: #fff;
             text-decoration: none;
