@@ -85,7 +85,9 @@ export default {
           margin-top: -30px;
           height: 140px;
           & > a {
-            color: #fff;
+            color: #daf6ff;
+            // text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+            text-shadow: 0 0 20px rgb(230, 10, 10),  0 0 20px rgba(10, 175, 230, 0);
             text-decoration: none;
           }
         }
