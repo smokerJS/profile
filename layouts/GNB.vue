@@ -8,13 +8,13 @@
     <div class="nav-screen" v-if="this.toggleNav">
       <ul>
         <li>
-          <a href="https://github.com/smokerJS" target="_blank">Github</a>
+          <a class="glitch1" href="https://github.com/smokerJS" data-text="Github" target="_blank">Github</a>
         </li>
         <li>
-          <a href="https://www.smoker.ga" target="_blank">Blog</a>
+          <a class="glitch2" href="https://www.smoker.ga" data-text="Blog" target="_blank">Blog</a>
         </li>
         <li>
-          <a href="https://drive.google.com/open?id=1HKSkvH0TYfE2ZZ33VSaVJiDyDIKI0qey" target="_blank">Portfolio</a>
+          <a class="glitch3" href="https://drive.google.com/open?id=1HKSkvH0TYfE2ZZ33VSaVJiDyDIKI0qey" data-text="Portfolio" target="_blank">Portfolio</a>
         </li>
       </ul>
     </div>
@@ -91,6 +91,150 @@ export default {
             text-decoration: none;
           }
         }
+      }
+    }
+  }
+
+  @mixin glitchCopy { 
+		content: attr(data-text);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+  }
+
+  .glitch1 {
+    position: relative;
+    animation: glitch-skew 1s infinite linear alternate-reverse;
+    
+    &::before{
+      @include glitchCopy;
+      left: 2px;
+      text-shadow: -2px 0 #ff00c1;
+      clip: rect(44px, 450px, 56px, 0);
+      animation: glitch1-anim 5s infinite linear alternate-reverse;
+    }
+    
+    &::after {
+      @include glitchCopy;
+      left: -2px;
+      text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+      animation: glitch1-anim2 1s infinite linear alternate-reverse;
+    }
+  }
+
+  .glitch2 {
+    position: relative;
+
+    &::before{
+      @include glitchCopy;
+      z-index: -1;
+      opacity: .5;
+      color: #ff00c1;
+      animation: glitch2-anim .3s cubic-bezier(.25, .46, .45, .94) both infinite;
+    }
+    
+    &::after {
+      @include glitchCopy;
+      opacity: .8;
+      color: #4400ff;
+      animation: glitch2-anim2 .3s cubic-bezier(.25, .46, .45, .94) reverse both infinite;
+    }
+  }
+
+  .glitch3 {
+    position: relative;
+
+    &::before{
+      @include glitchCopy;
+      left: 2px;
+      text-shadow: -2px 0 #ff00c1;
+      clip: rect(44px, 450px, 56px, 0);
+      animation: glitch3-anim 5s infinite linear alternate-reverse;
+    }
+    
+    &::after {
+      @include glitchCopy;
+      left: -2px;
+      text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+      animation: glitch3-anim2 1s infinite linear alternate-reverse;
+    }
+  }
+
+  @keyframes glitch1-anim {
+    $steps: 20;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+        transform: skew((random(100) / 100) + deg);
+      }
+    }
+  }
+
+  @keyframes glitch1-anim2 {
+    $steps: 20;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+        transform: skew((random(100) / 100) + deg);
+      }
+    }
+  }
+
+  @keyframes glitch2-anim {
+    0% {
+      transform: translate(0)
+    }
+    20% {
+      transform: translate(-5px, 5px)
+    }
+    40% {
+      transform: translate(-5px, -5px)
+    }
+    60% {
+      transform: translate(5px, 5px)
+    }
+    80% {
+      transform: translate(5px, -5px)
+    }
+    to {
+      transform: translate(0)
+    }
+  }
+
+  @keyframes glitch2-anim2 {
+    $steps: 20;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        clip: rect(random(150)+px, 350px, random(150)+px, 30px)
+      }
+    }
+  }
+
+  @keyframes glitch3-anim {
+    $steps: 20;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))}  {
+        clip: rect(random(150)+px, 350px, random(150)+px, 30px)
+      }
+    }
+  }
+
+  @keyframes glitch3-anim2 {
+    $steps: 20;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        clip: rect(random(150)+px, 350px, random(150)+px, 30px)
+      }
+    }
+  }
+
+  @keyframes glitch-skew {
+    $steps: 10;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        transform: skew((random(10) - 5) + deg);
       }
     }
   }
