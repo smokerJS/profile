@@ -1,6 +1,6 @@
 <template>
   <section class="popo">
-    test
+    404
   </section>
 </template>
 
