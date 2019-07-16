@@ -1,5 +1,5 @@
 <template>
-  <section class="popo">
+  <section class="404">
     404
   </section>
 </template>
@@ -7,7 +7,7 @@
 <script>
 
 export default {
-  name: 'index',
+  name: '404',
   components: {
 
   },
