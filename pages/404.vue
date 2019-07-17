@@ -1,5 +1,5 @@
 <template>
-  <section class="404">
+  <section class="page-404">
     404
   </section>
 </template>
@@ -18,5 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scope>
-
+  .page-404{
+    font-size: 100px;
+  }
 </style>
