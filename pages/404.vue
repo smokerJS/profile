@@ -20,5 +20,6 @@ export default {
 <style lang="scss" scope>
   .page-404{
     font-size: 100px;
+    color: #ff0000;
   }
 </style>
