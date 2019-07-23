@@ -1,6 +1,7 @@
 <template>
   <section class="page-404">
-    404
+    404<br/>
+    Error page
   </section>
 </template>
 
