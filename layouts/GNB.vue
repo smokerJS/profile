@@ -65,9 +65,6 @@ export default {
           color : rgb(0,0,255);
         }
       }
-      &.open {
-      }
-      &.off {
     }
     & > .nav-screen {
       position: fixed;
