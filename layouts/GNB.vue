@@ -90,7 +90,7 @@ export default {
         }
       }
     }
-  }
+  
 
   @mixin glitchCopy { 
 		content: attr(data-text);
