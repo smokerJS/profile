@@ -1,6 +1,7 @@
 <template>
   <section>
-    SmokerJS
+    <h1>SmokerJS</h1>
+    <!-- <img/> -->
   </section>
 </template>
 
