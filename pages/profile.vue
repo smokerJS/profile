@@ -3,7 +3,7 @@
     <h1>SmokerJS</h1>
     <!-- <img/> -->'
     <ul>
-      <li>1</li>
+      <li>www.smoker.ga</li>
       <li>2</li>
       <li>3</li>
     </ul>
