@@ -4,8 +4,9 @@
     <!-- <img/> -->'
     <ul>
       <li>www.smoker.ga</li>
-      <li>2</li>
-      <li>3</li>
+      <li>FrontEnd Devloper<li>
+      <li>Jung, Jinsol</li>
+      <li>smokerjs.dev@gmail.com</li>
     </ul>
   </section>
 </template>
