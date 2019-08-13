@@ -2,8 +2,8 @@
   <section>
     <h1>TUTOR</h1>
     <ul>
-      <li>VUE</li>
-      <li>ROR</li>
+      <li>Vue</li>
+      <li>Webpack</li>
     </ul>
   </section>
 </template>
