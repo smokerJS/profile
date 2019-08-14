@@ -75,7 +75,7 @@ export default {
       & > ul {
         position: absolute;
         top: 10%;
-        left: 5%;;
+        left: 5%;
         font-family: "FightThis";
         font-size: 100px;
         & > li {
