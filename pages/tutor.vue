@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1>TUTOR</h1>
+    <h1 class="tutor-title">TUTOR</h1>
     <ul>
       <li>Vue</li>
       <li>Webpack</li>
@@ -22,5 +22,7 @@ export default {
 </script>
 
 <style lang="scss" scope>
-
+  .tutor-title {
+    font-size: 199px;
+  }
 </style>
