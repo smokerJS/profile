@@ -78,6 +78,9 @@ export default {
         left: 5%;
         font-family: "FightThis";
         font-size: 100px;
+        @media (max-width: 1024px) {
+          font-size: 80px;
+        }
         & > li {
           margin-top: -30px;
           height: 140px;
