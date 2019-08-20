@@ -90,6 +90,15 @@ export default {
         & > li {
           margin-top: -30px;
           height: 140px;
+          @media (max-width: 1024px) {
+            margin-top: -40px;
+          }
+          @media (max-width: 767px) {
+            margin-top: -50px;
+          }
+          @media (max-width: 500px) {
+            margin-top: -60px;
+          }
           & > a {
             color: #daf6ff;
             // text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
