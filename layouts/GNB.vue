@@ -81,6 +81,12 @@ export default {
         @media (max-width: 1024px) {
           font-size: 80px;
         }
+        @media (max-width: 767px) {
+          font-size: 60px;
+        }
+        @media (max-width: 500px) {
+          font-size: 40px;
+        }
         & > li {
           margin-top: -30px;
           height: 140px;
