@@ -79,22 +79,16 @@ export default {
         font-family: "FightThis";
         font-size: 100px;
         @media (max-width: 1024px) {
-          font-size: 80px;
-        }
-        @media (max-width: 767px) {
-          font-size: 60px;
+          font-size: 70px;
         }
         @media (max-width: 500px) {
-          font-size: 40px;
+          font-size: 50px;
         }
         & > li {
           margin-top: -30px;
           height: 140px;
           @media (max-width: 1024px) {
             margin-top: -40px;
-          }
-          @media (max-width: 767px) {
-            margin-top: -50px;
           }
           @media (max-width: 500px) {
             margin-top: -60px;
