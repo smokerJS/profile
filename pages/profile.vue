@@ -7,6 +7,7 @@
       <li>FrontEnd Devloper<li>
       <li>Jung, Jinsol</li>
       <li>smokerjs.dev@gmail.com</li>
+      <li>React Redux Vue SCSS</li>
     </ul>
   </section>
 </template>
