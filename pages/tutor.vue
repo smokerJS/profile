@@ -5,7 +5,6 @@
       <li>Vue</li>
       <li>Webpack</li>
       <li>SCSS</li>
-      <li>ROR</li>
     </ul>
   </section>
 </template>
