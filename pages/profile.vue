@@ -1,7 +1,6 @@
 <template>
   <section>
     <h1>SmokerJS</h1>
-    <!-- <img/> -->'
     <ul>
       <li>www.smoker.ga</li>
       <li>FrontEnd Devloper<li>
