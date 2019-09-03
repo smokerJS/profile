@@ -87,10 +87,10 @@ export default {
           margin-top: -30px;
           height: 140px;
           @media (max-width: 1024px) {
-            margin-top: -40px;
+            margin-top: -50px;
           }
           @media (max-width: 500px) {
-            margin-top: -60px;
+            margin-top: -80px;
           }
           & > a {
             color: #daf6ff;
