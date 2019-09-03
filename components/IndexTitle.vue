@@ -101,6 +101,7 @@ export default {
         }
       }
     }
+  }
   @media (max-height: 500px) {
     .title-area {
       font-size:50px;
