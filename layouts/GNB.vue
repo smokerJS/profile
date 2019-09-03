@@ -58,12 +58,11 @@ export default {
       background-color: #fff;
       overflow: hidden;
       cursor: pointer;
-        & > i {
-          font-family: "FightThis";
-          font-style: normal;
-          font-size: 18px;
-          color : rgb(0,0,255);
-        }
+      & > i {
+        font-family: "FightThis";
+        font-style: normal;
+        font-size: 18px;
+        color : rgb(0,0,255);
       }
     }
     & > .nav-screen {
@@ -102,7 +101,7 @@ export default {
         }
       }
     }
-  
+  }
 
   @mixin glitchCopy { 
 		content: attr(data-text);
