@@ -73,7 +73,7 @@ export default {
       z-index: 99;
       & > ul {
         position: absolute;
-        top: 10.5%;
+        top: 8.5%;
         left: 5%;
         font-family: "FightThis";
         font-size: 100px;
