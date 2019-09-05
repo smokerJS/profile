@@ -8,6 +8,7 @@
       <li>smokerjs.dev@gmail.com</li>
       <li>React Redux Next.js Hooks</li>
       <li>VUE Nuxt.js</li>
+      <li>Webpack4</li>
     </ul>
   </section>
 </template>
