@@ -73,26 +73,24 @@ export default {
       z-index: 99;
       & > ul {
         position: absolute;
-        top: 10%;
+        top: 10.5%;
         left: 5%;
         font-family: "FightThis";
         font-size: 100px;
         @media (max-width: 1024px) {
           font-size: 70px;
-          top: 16%;
         }
         @media (max-width: 500px) {
           font-size: 50px;
-          top: 21%;
         }
         & > li {
-          margin-top: -30px;
+          margin-bottom: -30px;
           height: 140px;
           @media (max-width: 1024px) {
-            margin-top: -50px;
+            margin-bottom: -50px;
           }
           @media (max-width: 500px) {
-            margin-top: -80px;
+            margin-bottom: -80px;
           }
           & > a {
             color: #daf6ff;
