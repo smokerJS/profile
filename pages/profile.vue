@@ -6,8 +6,8 @@
       <li>FrontEnd Devloper<li>
       <li>Jung, Jinsol</li>
       <li>smokerjs.dev@gmail.com</li>
-      <li>React Redux Next.js Hooks</li>
-      <li>VUE Nuxt.js</li>
+      <li>React Redux Next Hooks</li>
+      <li>VUE Nuxt</li>
       <li>Webpack4 Sass</li>
     </ul>
   </section>
