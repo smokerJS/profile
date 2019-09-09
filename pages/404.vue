@@ -1,6 +1,6 @@
 <template>
   <section class="page-404">
-    404 Not Found
+    <h1>404 Not Found</h1>
   </section>
 </template>
 
@@ -19,7 +19,8 @@ export default {
 
 <style lang="scss" scope>
   .page-404{
+    background: rgba(0,0,255);
     font-size: 100px;
-    color: #ff0000;
+    color: #fff;
   }
 </style>
