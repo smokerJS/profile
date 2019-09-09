@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="profile-page">
     <img src="../assets/images/profile/img_profile.jpg"/>
     <h1>SmokerJS</h1>
     <ul>
@@ -27,5 +27,7 @@ export default {
 </script>
 
 <style lang="scss" scope>
-
+  .profile-page {
+    background-color: black;
+  }
 </style>
