@@ -1,6 +1,7 @@
 <template>
   <section class="page-404">
-    <h1>404 Not Found</h1>
+    <h1 v-if="error.statusCode === 404">404 Not Found</h1>
+    <h1 v-else>{{error.statusCode}} Error</h1> 
   </section>
 </template>
 
