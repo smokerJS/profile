@@ -21,7 +21,7 @@ export default {
 
 <style lang="scss" scope>
   .page-404{
-    background: rgba(0,0,255);
+    background: rgba(0,0,255,.9);
     font-size: 100px;
     color: #fff;
   }
