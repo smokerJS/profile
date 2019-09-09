@@ -1,5 +1,6 @@
 <template>
   <section>
+    <img src="../assets/images/profile/img_profile.jpg"/>
     <h1>SmokerJS</h1>
     <ul>
       <li>FrontEnd Devloper<li>
