@@ -64,7 +64,7 @@ export default {
     .title-area {
       top: 8.3%;
       left: 5.5%;
-      font-size:85px;
+      font-size: 85px;
       line-height: 90px;
       letter-spacing: 10px;
       & > span {
@@ -84,7 +84,7 @@ export default {
   }
   @media (max-width: 1024px) {
     .title-area {
-      font-size:70px;
+      font-size: 70px;
       line-height: 72px;
       letter-spacing: 5px;
       & > span {
@@ -103,7 +103,7 @@ export default {
     }
   @media (max-height: 500px) {
     .title-area {
-      font-size:50px;
+      font-size: 50px;
       line-height: 44px;
       letter-spacing: 5px;
       top: 4%;
