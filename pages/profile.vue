@@ -1,7 +1,7 @@
 <template>
   <section class="profile-page">
     <article>
-      <img src="../assets/images/profile/img_profile.jpeg"/>
+      <img :src="require('@images/profile/img_profile.jpeg')"/>
       <h1>SmokerJS</h1>
       <ul>
         <li>FrontEnd Devloper<li>
@@ -26,7 +26,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'profile',
   components: {
