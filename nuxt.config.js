@@ -1,4 +1,5 @@
 import pkg from './package'
+const path = require('path');
 
 export default {
   mode: 'spa',
@@ -59,6 +60,9 @@ export default {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
+      const alias = config.resolve.alias = config.resolve.alias || {};
+      alias['@'] = path.join(__dirname,'components');
+      alias['@images'] = path.join(__dirname,'assets/images');
     }
   }
 }
