@@ -1,5 +1,5 @@
 <template>
-  <div id="menuCanvasArea" ref="menuCanvasArea">
+  <div id="menuCanvasArea" :class="this.load && 'load'">
     <canvas id="viewCanvas" ref="viewCanvas" :style="{
       'position': 'fixed',
       'width': '100%',
@@ -13,6 +13,9 @@
 import html2canvas from 'html2canvas';
 export default {
   name: "menu-canvas",
+  props: {
+    loadHandler: {type: Function, required: true, default: x=>x}
+  },
   data: function() {
     return {
       verticalSlices : 0,
@@ -22,6 +25,7 @@ export default {
       viewWidth : 0,
       suvHeight : 0,
       suvWidth : 0,
+      load : true
     };
   },
   methods: {
@@ -48,7 +52,7 @@ export default {
     }
   },
   mounted() {
-    html2canvas(document.getElementById('layout')).then(canvas => {
+    html2canvas(document.querySelector('#layout.layout-frame')).then(canvas => {
       this.subCanvas = canvas;
       this.viewHeight = Math.round(this.$refs.viewCanvas.height / 100);
       this.viewWidth = this.$refs.viewCanvas.width;
@@ -56,17 +60,22 @@ export default {
       this.subwWidth = this.subCanvas.width
       this.ctx = this.$refs.viewCanvas.getContext("2d");
       this.loop();
+      this.load = false;
+      this.loadHandler();
     });
   }
 };
 </script>
 
 <style lang="scss" scope>
-  .menuCanvasArea {
+  #menuCanvasArea {
     position: fixed;
     width: 100%;
     height: 100vh;
     z-index: 50;
+    &.load {
+      background: rgba(255,0,0,.7);
+    }
     & > #viewCanvas {
       position: fixed;
       width: 100%;

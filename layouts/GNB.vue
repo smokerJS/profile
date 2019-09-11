@@ -1,11 +1,11 @@
 <template>
   <nav class="global-nav">
-    <button class="btn-toggle" :class="this.toggleNav" @click="toggleNavHandler">
+    <button class="btn-toggle" @click="toggleNavHandler">
       <i v-if="!this.toggleNav">MENU</i>
       <i v-else>CLOSE</i>
     </button>
-    <MenuCanvas v-show="this.toggleNav"/>
-    <div class="nav-screen" v-if="this.toggleNav">
+    <MenuCanvas v-if="this.toggleNav" :loadHandler="this.loadHandler"/>
+    <div class="nav-screen" v-if="this.toggleNav&&this.load">
       <ul>
         <li>
           <a class="glitch1" href="https://github.com/smokerJS" data-text="Github" target="_blank">Github</a>
@@ -17,6 +17,8 @@
           <a class="glitch3" href="https://drive.google.com/open?id=1HKSkvH0TYfE2ZZ33VSaVJiDyDIKI0qey" data-text="Portfolio" target="_blank">Portfolio</a>
         </li>
       </ul>
+      <nuxt-link to="/profile">profile</nuxt-link>
+      <nuxt-link to="/">profile</nuxt-link>
     </div>
   </nav>
 </template>
@@ -30,12 +32,17 @@ export default {
   name: 'GNB',
   data() {
     return {
-      toggleNav : false
+      toggleNav : false,
+      load: false
     }
   },
   methods: {
     toggleNavHandler() {
       this.$set(this.$data, 'toggleNav', !this.toggleNav);
+      this.$set(this.$data, 'load', false);
+    },
+    loadHandler() {
+      this.$set(this.$data, 'load', true);
     }
   },
 }
