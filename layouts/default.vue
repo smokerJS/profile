@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Gnb from '@/gnb/Index';
+import Gnb from '@/gnb';
 export default {
   components: {
     Gnb
