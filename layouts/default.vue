@@ -1,6 +1,6 @@
 <template>
   <div>
-    <GNB/>
+    <Gnb/>
     <div id="layout" class="layout-frame">
       <nuxt />
       <div class="license">
@@ -11,10 +11,10 @@
 </template>
 
 <script>
-import GNB from './GNB'
+import Gnb from '@/gnb'
 export default {
   components: {
-    GNB
+    Gnb
   },
 }
 </script>

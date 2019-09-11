@@ -1,12 +1,12 @@
 <template>
-  <section id="menuLoadingArea">
+  <section id="gnbLoadingArea">
     <div v-for="line of this.lineLength" :class="`item-${line}`" :key="`item-${line}`"></div>
   </section>
 </template>
 
 <script>
 export default {
-  name: "menu-loading",
+  name: "gnb-loading",
   data: function() {
     return {
       lineLength : 300
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="scss" scope>
-  #menuLoadingArea {
+  #gnbLoadingArea {
     position: fixed;
     width: 100%;
     height: 100vh;

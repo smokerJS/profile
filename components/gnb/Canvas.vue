@@ -1,6 +1,6 @@
 <template>
-  <div id="menuCanvasArea">
-    <MenuLoading v-if="this.load"/>
+  <div id="gnbCanvasArea">
+    <GnbLoading v-if="this.load"/>
     <canvas id="viewCanvas" ref="viewCanvas" :style="{
       'position': 'fixed',
       'width': '100%',
@@ -12,11 +12,11 @@
 
 <script>
 import html2canvas from 'html2canvas';
-import MenuLoading from './MenuLoading';
+import GnbLoading from '@/gnb/Loading';
 export default {
-  name: "menu-canvas",
+  name: "gnb-canvas",
   components: {
-    MenuLoading
+    GnbLoading
   },
   props: {
     loadHandler: {type: Function, required: true, default: x=>x}
@@ -73,7 +73,7 @@ export default {
 </script>
 
 <style lang="scss" scope>
-  #menuCanvasArea {
+  #gnbCanvasArea {
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -85,6 +85,4 @@ export default {
       z-index: 2;
     }
   }
-
-
 </style>

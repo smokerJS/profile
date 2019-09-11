@@ -4,7 +4,7 @@
       <i v-if="!this.toggleNav">MENU</i>
       <i v-else>CLOSE</i>
     </button>
-    <MenuCanvas v-if="this.toggleNav" :loadHandler="this.loadHandler"/>
+    <GnbCanvas v-if="this.toggleNav" :loadHandler="this.loadHandler"/>
     <div class="nav-screen" v-if="this.toggleNav&&this.load">
       <ul>
         <li>
@@ -24,12 +24,12 @@
 </template>
 
 <script>
-import MenuCanvas from '../components/MenuCanvas'
+import GnbCanvas from '@/gnb/Canvas'
 export default {
   components: {
-    MenuCanvas
+    GnbCanvas
   },
-  name: 'GNB',
+  name: 'gnb-index',
   data() {
     return {
       toggleNav : false,
