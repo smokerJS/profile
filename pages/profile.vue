@@ -1,6 +1,6 @@
 <template>
   <section class="profile-page">
-    <img src="../assets/images/profile/img_profile.jpg"/>
+    <img src="../assets/images/profile/img_profile.jpeg"/>
     <h1>SmokerJS</h1>
     <ul>
       <li>FrontEnd Devloper<li>
