@@ -1,5 +1,6 @@
 <template>
-  <div id="menuCanvasArea" :class="this.load && 'load'">
+  <div id="menuCanvasArea">
+    <MenuLoading v-if="this.load"/>
     <canvas id="viewCanvas" ref="viewCanvas" :style="{
       'position': 'fixed',
       'width': '100%',
@@ -11,8 +12,12 @@
 
 <script>
 import html2canvas from 'html2canvas';
+import MenuLoading from './MenuLoading';
 export default {
   name: "menu-canvas",
+  components: {
+    MenuLoading
+  },
   props: {
     loadHandler: {type: Function, required: true, default: x=>x}
   },
@@ -73,9 +78,6 @@ export default {
     width: 100%;
     height: 100vh;
     z-index: 50;
-    &.load {
-      background: rgba(255,0,0,.7);
-    }
     & > #viewCanvas {
       position: fixed;
       width: 100%;
@@ -83,4 +85,6 @@ export default {
       z-index: 2;
     }
   }
+
+
 </style>
