@@ -1,9 +1,11 @@
 <template>
-  <div id="layout" class="layout-frame">
+  <div>
     <GNB/>
-    <nuxt />
-    <div class="license">
-      <strong>Copyright(c) 2019 smokerJS All rights reserved.</strong>
+    <div id="layout" class="layout-frame">
+      <nuxt />
+      <div class="license">
+        <strong>Copyright(c) 2019 smokerJS All rights reserved.</strong>
+      </div>
     </div>
   </div>
 </template>
