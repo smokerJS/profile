@@ -9,7 +9,7 @@ export default {
   name: "gnb-loading",
   data: function() {
     return {
-      lineLength : 300
+      lineLength : 1000
     };
   },
 };
@@ -24,11 +24,28 @@ export default {
     background: rgba(255,0,0,.8);
     & div {
       float: left;
-      @for $line from 1 to 300 {
-        &.item-#{$line}{
-          height: random(80)+px;
-          width: random(100)+px;
-          background: rgba(random(150),random(100),random(255),random(10)/10);
+      $dotSize: 10;
+      @media (min-width: 769px) {
+        $pxSize: 7px;
+        overflow: hidden;
+        @for $line from 1 to 1000 {
+          &.item-#{$line}{
+            height: (random(80)/$dotSize)*$pxSize;
+            width: (random(100)/$dotSize)*$pxSize;
+            margin-top: random(40)/10+px;
+            background: rgba(random(150),random(100),random(255),random(10)/10);
+          }
+        }
+      }
+      @media (max-width: 768px) {
+        $pxSize: 4px;
+        @for $line from 1 to 1000 {
+          &.item-#{$line}{
+            height: (random(80)/$dotSize)*$pxSize;
+            width: (random(100)/$dotSize)*$pxSize;
+            margin-top: random(15)+px;
+            background: rgba(random(150),random(100),random(255),random(10)/10);
+          }
         }
       }
     }
