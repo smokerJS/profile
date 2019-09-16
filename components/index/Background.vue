@@ -24,8 +24,8 @@
 const eventHandler = {
   mouseMoveTimeout : null
 };
-import IndexBackgroundCanvas from '@/index/IndexBackgroundCanvas';
-import IndexCodeScreen from '@/index/IndexCodeScreen';
+import IndexBackgroundCanvas from '@/index/BackgroundCanvas';
+import IndexCodeScreen from '@/index/CodeScreen';
 export default {
   name: "index-background",
   components: {
