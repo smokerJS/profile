@@ -20,6 +20,7 @@ export default {
 </script>
 
 <style lang="scss">
+  $images: "//assets/images";
   * {
     margin: 0 auto;
     padding: 0;

@@ -85,7 +85,7 @@ export default {
           position: absolute;
           width: 100%;
           height: 100%;
-          background: url("../assets/images/index/img_background_line.png") no-repeat center;
+          background: url($images+"/index/img_background_line.png") no-repeat center;
           background-size: cover;
           z-index: 3;
         }
@@ -93,7 +93,7 @@ export default {
           position: absolute;
           width: 100%;
           height: 100%;
-          background: url("../assets/images/index/img_background_line_over.png") no-repeat center;
+          background: url($images+"/index/img_background_line_over.png") no-repeat center;
           background-size: cover;
           z-index: 3;
           &.filter-1 {
