@@ -72,7 +72,7 @@ export default {
       position: relative;
       width: 100%;
       height: 100%;
-      background-color: black;
+      background-color: #000;
       background-size: cover;
       transition: 1.5s;
       transition-timing-function: ease-in-out;
