@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import IndexTitle from '../components/IndexTitle';
-import IndexBackground from '../components/IndexBackground';
+import IndexTitle from '@/index/Title';
+import IndexBackground from '@/index/Background';
 
 
 export default {
