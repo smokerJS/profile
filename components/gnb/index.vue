@@ -71,7 +71,7 @@ export default {
         font-family: "FightThis";
         font-style: normal;
         font-size: 18px;
-        color : rgb(0,0,255);
+        color : $blue;
       }
     }
     & > .nav-screen {
