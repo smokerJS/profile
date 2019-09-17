@@ -31,6 +31,6 @@ export default {
 
 <style lang="scss" scope>
   .profile-page {
-    background-color: #000;
+    background-color: $black;
   }
 </style>
