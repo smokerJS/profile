@@ -46,7 +46,7 @@ export default {
       padding-left: 5px;
       height: 100px;
       &.middle-text {
-        background-color: blue;
+        background-color: $blue;
         height: 110px;
         width: 600px;
         margin: 0 0;
@@ -56,7 +56,7 @@ export default {
       }
       & > strong {
         padding-right: 40%;
-        background: linear-gradient(transparent 70%, rgb(0, 0, 255) 50%);
+        background: linear-gradient(transparent 70%, $blue 50%);
       }
     }
   }
@@ -71,7 +71,7 @@ export default {
         padding-left: 7px;
         height: 85px;
         &.middle-text {
-          background-color: rgb(0, 0, 255);
+          background-color: $blue;
           height: 100px;
           width: 480px;
           margin: 0 0;
@@ -91,7 +91,7 @@ export default {
         padding-left: 7px;
         height: 70px;
         &.middle-text {
-          background-color: rgb(0, 0, 255);
+          background-color: $blue;
           height: 80px;
           width: 350px;
           margin: 0 0;
@@ -112,7 +112,7 @@ export default {
         padding-left: 7px;
         height: 46px;
         &.middle-text {
-          background-color: rgb(0, 0, 255);
+          background-color: $blue;
           height: 48px;
           width: 270px;
           margin: 0 0;
