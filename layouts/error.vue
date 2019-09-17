@@ -23,7 +23,7 @@ export default {
   .page-404{
     width: 100%;
     height: 100vh;
-    background: rgba(0,0,255,.9);
+    background: $blue;
     font-size: 100px;
     color: #fff;
   }
