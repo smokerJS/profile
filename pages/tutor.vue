@@ -24,6 +24,6 @@ export default {
 
 <style lang="scss" scope>
   .tutor-title {
-    font-size: 199px;
+    font-size: 200px;
   }
 </style>
