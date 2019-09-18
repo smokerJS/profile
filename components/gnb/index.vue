@@ -11,7 +11,7 @@
           <a class="glitch1" href="https://github.com/smokerJS" data-text="Github" target="_blank">Github</a>
         </li>
         <li>
-          <a class="glitch2" href="https://www.smoker.ga" data-text="Blog" target="_blank">Blog</a>
+          <a class="glitch2" href="https://blog.smokerjs.dev" data-text="Blog" target="_blank">Blog</a>
         </li>
         <li>
           <a class="glitch3" href="https://drive.google.com/open?id=1HKSkvH0TYfE2ZZ33VSaVJiDyDIKI0qey" data-text="Portfolio" target="_blank">Portfolio</a>
