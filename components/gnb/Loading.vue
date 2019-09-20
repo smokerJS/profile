@@ -21,7 +21,7 @@ export default {
     width: 100%;
     height: 100vh;
     z-index: 50;
-    background: rgba(66, 65, 100, 0.8);
+    background: rgba(65, 65, 100, 0.8);
     & div {
       float: left;
       $dotSize: 10;
