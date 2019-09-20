@@ -25,6 +25,6 @@ export default {
     height: 100vh;
     background: $blue;
     font-size: 100px;
-    color: #fff;
+    color: $white;
   }
 </style>
