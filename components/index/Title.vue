@@ -36,7 +36,7 @@ export default {
     z-index: 11;
     font-family: "FightThis";
     font-size: 100px;
-    color: #fff;
+    color: $white;
     letter-spacing: 15px;
     font-weight: bold;
     line-height: 100px;
