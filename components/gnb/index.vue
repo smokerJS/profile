@@ -64,7 +64,7 @@ export default {
       height: 28px;
       padding-right: 14px;
       border: none;
-      background-color: #fff;
+      background-color: $white;
       overflow: hidden;
       cursor: pointer;
       & > i {
