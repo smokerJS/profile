@@ -20,11 +20,11 @@ a {
 }
 @font-face {
   font-family: "FightThis";
-  src: url("../fonts/FightThis.eot");
-  src: local(※), url("../fonts/FightThis.woff") format("woff");
+  src: url("~static/fonts/FightThis.eot");
+  src: local(※), url("~static/fonts/FightThis.woff") format("woff");
 }
 @font-face {
   font-family: "D2Coding";
-  src: url("../fonts/D2Coding.eot");
-  src: local(※), url("../fonts/D2Coding.woff") format("woff");
+  src: url("~static/fonts/D2Coding.eot");
+  src: local(※), url("~static/fonts/D2Coding.woff") format("woff");
 }
