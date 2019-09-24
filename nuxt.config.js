@@ -22,9 +22,6 @@ export default {
   
   loading: false,
 
-  /*
-  ** Global CSS
-  */
   css: [
      '~assets/style/global.scss'
   ],
