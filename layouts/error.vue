@@ -9,13 +9,7 @@
 
 export default {
   name: '404',
-  components: {
-
-  },
   props: ['error'],
-  methods: {
-
-  },
 }
 </script>
 
