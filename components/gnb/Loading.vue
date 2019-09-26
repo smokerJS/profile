@@ -10,7 +10,7 @@ export default {
   data: function() {
     return {
       lineLength : 1000
-    };
+    }
   },
 };
 </script>
