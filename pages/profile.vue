@@ -20,12 +20,6 @@
 <script>
 export default {
   name: 'profile',
-  components: {
-
-  },
-  methods: {
-
-  },
 }
 </script>
 
