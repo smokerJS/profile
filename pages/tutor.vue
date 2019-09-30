@@ -13,12 +13,6 @@
 
 export default {
   name: 'tutor',
-  components: {
-
-  },
-  methods: {
-
-  },
 }
 </script>
 
