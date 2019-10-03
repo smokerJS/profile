@@ -14,7 +14,6 @@
       </div>
       <button>send</button>
     </article>
-    <canvas></canvas>
   </section>
 </template>
 
