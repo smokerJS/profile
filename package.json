@@ -16,9 +16,7 @@
     "html2canvas": "^1.0.0-rc.3",
     "node-sass": "^4.12.0",
     "nuxt": "^2.4.0",
-    "sass-loader": "^7.1.0",
-    "vuetify": "^1.5.5",
-    "vuetify-loader": "^1.2.1"
+    "sass-loader": "^7.1.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.9",
