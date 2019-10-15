@@ -2,7 +2,7 @@
   "name": "profile",
   "version": "1.0.0",
   "description": "My majestic Nuxt.js project",
-  "author": "smokerJS",
+  "author": "smokerJS <smokerjs.dev@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "nuxt",
