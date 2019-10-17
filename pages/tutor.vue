@@ -5,7 +5,7 @@
       <li>Vue</li>
       <li>Webpack</li>
       <li>SCSS</li>
-      <li><a href="//kr.tutor.com">link</a></li>
+      <li><a href="//kr.tutor.com">kr.tutor.com</a></li>
     </ul>
   </section>
 </template>
