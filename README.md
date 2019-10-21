@@ -2,6 +2,7 @@
 
 > Nuxt.js project \
 > SmokerJS profile web
+> https://www.smokerjs.dev
 
 ## Build Setup
 
