@@ -4,7 +4,7 @@ const path = require('path');
 export default {
   mode: 'spa',
   head: {
-    title: pkg.name,
+    title: 'smokerJS',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
