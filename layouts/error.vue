@@ -2,6 +2,7 @@
   <section class="page-404">
     <h1 v-if="error.statusCode === 404">404 Not Found</h1>
     <h1 v-else>{{error.statusCode}} Error</h1> 
+    <!-- 정적 호스팅 수정 필요함 -->
   </section>
 </template>
 
