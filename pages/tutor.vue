@@ -10,7 +10,7 @@
 </template>
 
 <script>
-
+import Temp from '@/temp/HelloWorld';
 export default {
   name: 'tutor',
 }
