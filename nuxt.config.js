@@ -63,6 +63,7 @@ export default {
       const alias = config.resolve.alias = config.resolve.alias || {};
       alias['@'] = path.join(__dirname,'components');
       alias['@images'] = path.join(__dirname,'static/images');
+      alias['@videos'] = path.join(__dirname,'static/videos');
     }
   }
 }
