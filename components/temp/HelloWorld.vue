@@ -8,7 +8,7 @@
     crossOrigin="anonymous"
     muted="muted"
     webkit-playsinline>
-    <!-- <source src="../../public/video.mp4"> -->
+    <source :src="require('@videos/video.mp4')">
   </video>
   </div>
 </template>
