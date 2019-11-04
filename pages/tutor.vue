@@ -6,6 +6,7 @@
       <li>Webpack</li>
       <li>SCSS</li>
     </ul>
+    <Temp/>
   </section>
 </template>
 
