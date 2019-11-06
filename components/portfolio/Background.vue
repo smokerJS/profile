@@ -32,8 +32,8 @@ export default {
     mouseMoveHandler(e) {
       let windowHalfX = window.innerWidth / 2;
 			let	windowHalfY = window.innerHeight / 2;
-      this.$set(this.$data, 'mouseX', ( e.clientX - windowHalfX ) / 80);
-      this.$set(this.$data, 'mouseY', ( e.clientY - windowHalfY ) / 80 * 0.3);
+      this.$set(this.$data, 'mouseX', ( e.clientX - windowHalfX ) / 120);
+      this.$set(this.$data, 'mouseY', ( e.clientY - windowHalfY ) / 70);
     }
   },
   mounted() {
