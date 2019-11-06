@@ -14,6 +14,9 @@
 import Temp from '@/temp/HelloWorld';
 export default {
   name: 'tutor',
+  components: {
+    Temp
+  },
 }
 </script>
 
