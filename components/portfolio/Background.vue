@@ -1,5 +1,5 @@
 <template>
-  <div class="portfolio-background-group">
+  <div class="portfolio-background-group" @mousemove="mouseMoveHandler">
     <video id="video"
       loop
       preload="auto"
@@ -23,7 +23,17 @@ export default {
       camera: null,
       scene: null,
       renderer: null,
-      mesh: null
+      mesh: null,
+      mouseX: 0,
+			mouseY: 0,
+    }
+  },
+  methods: {
+    mouseMoveHandler(e) {
+      let windowHalfX = window.innerWidth / 2;
+			let	windowHalfY = window.innerHeight / 2;
+      this.$set(this.$data, 'mouseX', ( e.clientX - windowHalfX ) / 80);
+      this.$set(this.$data, 'mouseY', ( e.clientY - windowHalfY ) / 80 * 0.3);
     }
   },
   mounted() {
@@ -35,7 +45,7 @@ export default {
     
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);  
+    const camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 ); 
     const renderer = new THREE.WebGLRenderer();  
     renderer.setSize( window.innerWidth, window.innerHeight);
     document.getElementById('container').appendChild(renderer.domElement);  
@@ -49,13 +59,16 @@ export default {
     const mesh = new THREE.Mesh( geometry, material);  
     scene.add(mesh);  
 
-    camera.position.z = 5; 
+    camera.position.z = 10; 
 
-    function render(){
+    const render = () => {
       requestAnimationFrame( render );
+      camera.position.x += ( - this.mouseX - camera.position.x ) * 0.05;
+      camera.position.y += ( this.mouseY - camera.position.y ) * 0.05;
+      camera.lookAt( scene.position );
       renderer.render(scene, camera);
-      mesh.rotation.x += 0.01;
-      mesh.rotation.y += 0.01;
+      // mesh.rotation.x += 0.01;
+      // mesh.rotation.y += 0.01;
     }
 
     render(); 
