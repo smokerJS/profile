@@ -9,7 +9,9 @@
       webkit-playsinline>
       <source :src="require('@videos/video.mp4')">
     </video>
-    <div id="container"></div>
+    <div id="container">
+      <div />
+    </div>
   </div>
 </template>
 
