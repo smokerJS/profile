@@ -67,8 +67,6 @@ export default {
       camera.position.y += ( this.mouseY - camera.position.y ) * 0.05;
       camera.lookAt( scene.position );
       renderer.render(scene, camera);
-      // mesh.rotation.x += 0.01;
-      // mesh.rotation.y += 0.01;
     }
 
     render(); 
