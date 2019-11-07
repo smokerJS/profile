@@ -40,6 +40,7 @@ export default {
   },
   methods: {
     toggleNavHandler() {
+      this.$store.commit('gnbSwitchHandler');
       this.$set(this.$data, 'toggleNav', !this.toggleNav);
       this.$set(this.$data, 'load', false);
     },

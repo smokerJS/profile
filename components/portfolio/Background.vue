@@ -10,7 +10,7 @@
       <source :src="require('@videos/video.mp4')">
     </video>
     <div id="container">
-      <div />
+      <img id="backgroundImg" :class="$store.state.gnbSwitch && 'open'" :src="backgroundImgSrc" />
     </div>
   </div>
 </template>
@@ -24,10 +24,12 @@ export default {
     return {
       camera: null,
       scene: null,
-      renderer: null,
+      renderer: new THREE.WebGLRenderer({antialias : true, preserveDrawingBuffer : true}),
       mesh: null,
       mouseX: 0,
-			mouseY: 0,
+      mouseY: 0,
+      backgroundSwitch: false,
+      backgroundImgSrc: ''
     }
   },
   methods: {
@@ -48,9 +50,9 @@ export default {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 ); 
-    const renderer = new THREE.WebGLRenderer();  
-    renderer.setSize( window.innerWidth, window.innerHeight);
-    document.getElementById('container').appendChild(renderer.domElement);  
+
+    this.renderer.setSize( window.innerWidth, window.innerHeight);
+    document.getElementById('container').appendChild(this.renderer.domElement);  
 
     const geometry = new THREE.PlaneGeometry(8,5);
     const material = new THREE.MeshBasicMaterial({
@@ -68,7 +70,8 @@ export default {
       camera.position.x += ( - this.mouseX - camera.position.x ) * 0.05;
       camera.position.y += ( this.mouseY - camera.position.y ) * 0.05;
       camera.lookAt( scene.position );
-      renderer.render(scene, camera);
+      this.renderer.render(scene, camera);
+      !this.$store.state.gnbSwitch && (this.backgroundImgSrc = this.renderer.domElement.toDataURL("image/png", 1.0));
     }
 
     render(); 
@@ -93,5 +96,15 @@ export default {
     width: 100%;
     height: 100%;
     position: absolute;
+  }
+  #backgroundImg {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: none;
+    &.open {
+      z-index: 2;
+      display: block;
+    }
   }
 </style>
