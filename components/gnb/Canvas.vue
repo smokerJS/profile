@@ -2,7 +2,7 @@
   <div id="gnbCanvasArea">
     <GnbLoading v-if="this.load"/>
     <canvas id="viewCanvasBack" ref="viewCanvasBack"></canvas>
-    <canvas id="viewCanvasCover" ref="viewCanvasCover"></canvas>
+    <!-- <canvas id="viewCanvasCover" ref="viewCanvasCover"></canvas> -->
   </div>
 </template>
 
@@ -36,7 +36,26 @@ export default {
     },
     loopBack() {
       const verticalSlices = this.verticalSlices;
-      for (let i = 0; i < 100; i+= 0.5)  {
+
+      const innerWidth = this.$refs.viewCanvasBack.width;
+      const innerHeight = this.$refs.viewCanvasBack.height;
+      this.ctxBack.fillStyle = "#1a191c";
+      this.ctxBack.fillRect(0, 0, innerWidth, innerHeight);
+
+      this.ctxBack.shadowBlur = 0;
+      this.ctxBack.shadowColor = "none";
+            const colors = [
+        "#b4b2b5",
+        "#dfd73f",
+        "#6ed2dc",
+        "#66cf5d",
+        "#c542cb",
+        "#d0535e",
+        "#3733c9"
+      ];
+
+            for (let i = 0; i < 100; i+= 0.5)  {
+
         let horizOffset = this.getRandom(-Math.abs(20), 20);
         this.ctxBack.drawImage(
           this.subCanvas,
@@ -50,6 +69,17 @@ export default {
           i * this.viewHeight + this.viewHeight
         )
       }
+
+for (let i = 0; i < 3; i+= 1)  {
+                    this.ctxBack.fillStyle = colors[Math.floor(Math.random() * 40)];
+      this.ctxBack.fillRect(
+        Math.random() * innerWidth - 20,
+        Math.random() * innerHeight - 20,
+        Math.random() * innerWidth - 20,
+        Math.random() * innerHeight - 20
+      );
+}
+      // this.ctxBack.setTransform(1, 0, 0, .8, .2, 0);
       requestAnimationFrame(this.loopBack);
     },
     loopCover() {
@@ -110,9 +140,9 @@ export default {
       this.subHeight = Math.round(this.subCanvas.height / 80);
       this.subwWidth = this.subCanvas.width;
       this.ctxBack = this.$refs.viewCanvasBack.getContext("2d");
-      this.ctxCover = this.$refs.viewCanvasCover.getContext("2d");
+      // this.ctxCover = this.$refs.viewCanvasCover.getContext("2d");
       this.loopBack();
-      this.loopCover();
+      // this.loopCover();
       this.load = false;
       this.loadHandler();
     });
