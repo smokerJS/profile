@@ -1,12 +1,8 @@
 <template>
   <div id="gnbCanvasArea">
     <GnbLoading v-if="this.load"/>
-    <canvas id="viewCanvas" ref="viewCanvas" :style="{
-      'position': 'fixed',
-      'width': '100%',
-      'height': '100%',
-      'z-index': '2'
-    }"></canvas>
+    <canvas id="viewCanvasBack" ref="viewCanvasBack"></canvas>
+    <canvas id="viewCanvasCover" ref="viewCanvasCover"></canvas>
   </div>
 </template>
 
@@ -24,7 +20,8 @@ export default {
   data: function() {
     return {
       verticalSlices : 0,
-      ctx : null,
+      ctxBack : null,
+      ctxCover : null,
       subCanvas : null,
       viewHeight : 0,
       viewWidth : 0,
@@ -37,11 +34,11 @@ export default {
     getRandom(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     },
-    loop() {
+    loopBack() {
       const verticalSlices = this.verticalSlices;
       for (let i = 0; i < 100; i+= 0.5)  {
         let horizOffset = this.getRandom(-Math.abs(20), 20);
-        this.ctx.drawImage(
+        this.ctxBack.drawImage(
           this.subCanvas,
           0,
           i * this.subHeight + 20,
@@ -53,18 +50,69 @@ export default {
           i * this.viewHeight + this.viewHeight
         )
       }
-      requestAnimationFrame(this.loop);
+      requestAnimationFrame(this.loopBack);
+    },
+    loopCover() {
+      const colors = [
+        "#b4b2b5",
+        "#dfd73f",
+        "#6ed2dc",
+        "#66cf5d",
+        "#c542cb",
+        "#d0535e",
+        "#3733c9"
+      ];
+
+      const innerWidth = this.$refs.viewCanvasCover.width;
+      const innerHeight = this.$refs.viewCanvasCover.height;
+      this.ctxCover.fillStyle = "#1a191c";
+      this.ctxCover.fillRect(0, 0, innerWidth, innerHeight);
+
+      this.ctxCover.shadowBlur = 0;
+      this.ctxCover.shadowColor = "none";
+      this.ctxCover.setTransform(1, 0, 0, 1, 0, 0);
+
+      for (let i = 0; i < 1000; i++) {
+        this.ctxCover.fillStyle = `rgba(255, 255, 255, ${Math.random() * 0.01})`;
+        this.ctxCover.fillRect(
+          Math.floor(Math.random() * innerWidth),
+          Math.floor(Math.random() * innerHeight),
+          Math.floor(Math.random() * 30) + 1,
+          Math.floor(Math.random() * 30) + 1
+        );
+
+        this.ctxCover.fillStyle = `rgba(0,0,0,${Math.random() * 0.1})`;
+        this.ctxCover.fillRect(
+          Math.floor(Math.random() * innerWidth),
+          Math.floor(Math.random() * innerHeight),
+          Math.floor(Math.random() * 25) + 1,
+          Math.floor(Math.random() * 25) + 1
+        );
+      }
+      
+      this.ctxCover.fillStyle = colors[Math.floor(Math.random() * 40)];
+      this.ctxCover.fillRect(
+        Math.random() * innerWidth - 20,
+        Math.random() * innerHeight - 20,
+        Math.random() * innerWidth - 20,
+        Math.random() * innerHeight - 20
+      );
+      this.ctxCover.setTransform(1, 0, 0, .8, .2, 0);
+
+      requestAnimationFrame(this.loopCover);
     }
   },
   mounted() {
     html2canvas(document.querySelector('#layout.layout-frame')).then(canvas => {
       this.subCanvas = canvas;
-      this.viewHeight = Math.round(this.$refs.viewCanvas.height / 100);
-      this.viewWidth = this.$refs.viewCanvas.width;
+      this.viewHeight = Math.round(this.$refs.viewCanvasBack.height / 100);
+      this.viewWidth = this.$refs.viewCanvasBack.width;
       this.subHeight = Math.round(this.subCanvas.height / 80);
       this.subwWidth = this.subCanvas.width
-      this.ctx = this.$refs.viewCanvas.getContext("2d");
-      this.loop();
+      this.ctxBack = this.$refs.viewCanvasBack.getContext("2d");
+      this.ctxCover = this.$refs.viewCanvasCover.getContext("2d");
+      this.loopBack();
+      this.loopCover();
       this.load = false;
       this.loadHandler();
     });
@@ -78,11 +126,18 @@ export default {
     width: 100%;
     height: 100vh;
     z-index: 50;
-    & > #viewCanvas {
+    & > #viewCanvasBack {
       position: fixed;
       width: 100%;
       height: 100%;
       z-index: 2;
+    }
+    & > #viewCanvasCover {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      opacity: .6;
     }
   }
 </style>
