@@ -44,7 +44,7 @@ export default {
         this.ctx.drawImage(
           this.subCanvas,
           0,
-          i * this.subHeight,
+          i * this.subHeight + 20,
           this.subCanvas.width,
           i * this.subHeight + this.subHeight,
           horizOffset,
@@ -61,7 +61,7 @@ export default {
       this.subCanvas = canvas;
       this.viewHeight = Math.round(this.$refs.viewCanvas.height / 100);
       this.viewWidth = this.$refs.viewCanvas.width;
-      this.subHeight = Math.round(this.subCanvas.height / 100);
+      this.subHeight = Math.round(this.subCanvas.height / 80);
       this.subwWidth = this.subCanvas.width
       this.ctx = this.$refs.viewCanvas.getContext("2d");
       this.loop();
