@@ -79,7 +79,7 @@ export default {
       position: fixed;
       width: 100%;
       height: 100vh;
-      background: rgba(0,0,255,.4);
+      background: rgba(0,0,255,.45);
       z-index: 99;
       & > ul {
         position: absolute;
