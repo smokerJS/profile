@@ -77,6 +77,7 @@ export default {
           Math.random() * innerHeight - 20
         );
       }
+      
       ctx.setTransform(1, 0, .7, 1, .2, .4);
       requestAnimationFrame(this.loopBack);
     }
