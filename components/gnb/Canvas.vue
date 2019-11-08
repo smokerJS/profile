@@ -108,7 +108,7 @@ export default {
       this.viewHeight = Math.round(this.$refs.viewCanvasBack.height / 100);
       this.viewWidth = this.$refs.viewCanvasBack.width;
       this.subHeight = Math.round(this.subCanvas.height / 80);
-      this.subwWidth = this.subCanvas.width
+      this.subwWidth = this.subCanvas.width;
       this.ctxBack = this.$refs.viewCanvasBack.getContext("2d");
       this.ctxCover = this.$refs.viewCanvasCover.getContext("2d");
       this.loopBack();
