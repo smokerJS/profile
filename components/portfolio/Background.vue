@@ -41,6 +41,7 @@ export default {
     }
   },
   mounted() {
+    // data 수정 필요
     const video = document.getElementById('video');
     const texture = new THREE.VideoTexture(video);
     texture.minFilter = THREE.LinearFilter;
