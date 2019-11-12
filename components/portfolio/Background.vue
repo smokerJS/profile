@@ -52,6 +52,8 @@ export default {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 ); 
 
+    const ctx = document.createElement('canvas').getContext('2d');
+    const copyCtx = document.createElement('canvas').getContext('2d');
     this.renderer.setSize( window.innerWidth, window.innerHeight);
     document.getElementById('container').appendChild(this.renderer.domElement);  
 
