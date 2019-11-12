@@ -54,6 +54,51 @@ export default {
 
     const ctx = document.createElement('canvas').getContext('2d');
     const copyCtx = document.createElement('canvas').getContext('2d');
+    let copyCount = 0;
+    ctx.canvas.width = window.innerWidth;
+    ctx.canvas.height = window.innerHeight;
+    copyCtx.canvas.width = window.innerWidth;
+    copyCtx.canvas.height = window.innerHeight;
+    copyCtx.filter = 'blur(50px)';
+    copyCtx.fillStyle = 'rgb(0,0,0)';
+    copyCtx.fillRect(0, 0, copyCtx.canvas.width, copyCtx.canvas.height);
+    ctx.fillStyle = 'rgb(0,0,0)';
+    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+    function randInt(min, max) {
+      if (max === undefined) {
+        max = min;
+        min = 0;
+      }
+      return Math.random() * (max - min) + min | 0;
+    }
+
+    function drawRandomDot() {
+      copyCount >= 1 && (copyCount = 0);
+      if(!copyCount) {
+        copyCtx.fillStyle = 'rgb(0,0,0)';
+        copyCtx.fillRect(0, 0, copyCtx.canvas.width, copyCtx.canvas.height);
+        for(let i = 0; i < 6; i++) {
+          copyCtx.fillStyle = `rgba(${randInt(255)}, ${randInt(50)}, ${randInt(50)}, 0.5)`;
+          copyCtx.beginPath();
+          copyCtx.globalAlpha = randInt(10) * 0.1;
+          const x = randInt(window.innerWidth);
+          const y = randInt(window.innerHeight);
+          const radius = randInt(window.innerHeight);
+          copyCtx.arc(x, y, radius, 0, Math.PI * 2);
+          copyCtx.fill();
+        }
+      } else {
+        ctx.globalAlpha = copyCount;
+        ctx.drawImage(copyCtx.canvas, 0, 0, ctx.canvas.width, ctx.canvas.height);
+      }
+      copyCount += 0.02;
+    }
+
+
+    const sceneBackground = new THREE.Texture(ctx.canvas);
+    scene.background = sceneBackground;
+
     this.renderer.setSize( window.innerWidth, window.innerHeight);
     document.getElementById('container').appendChild(this.renderer.domElement);  
 
@@ -73,6 +118,8 @@ export default {
       camera.position.x += ( - this.mouseX - camera.position.x ) * 0.05;
       camera.position.y += ( this.mouseY - camera.position.y ) * 0.05;
       camera.lookAt( scene.position );
+      sceneBackground.needsUpdate = true;
+      drawRandomDot();
       this.renderer.render(scene, camera);
       !this.$store.state.gnbSwitch && (this.backgroundImgSrc = this.renderer.domElement.toDataURL("image/png", 1.0));
     }
