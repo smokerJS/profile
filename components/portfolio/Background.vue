@@ -10,7 +10,7 @@
       <source :src="require('@videos/video.mp4')">
     </video>
     <div id="container">
-      <img id="backgroundImg" :class="$store.state.gnbSwitch && 'open'" :src="backgroundImgSrc" />
+      <img v-if="$store.state.gnbSwitch" id="backgroundImg" :class="$store.state.gnbSwitch && 'open'" :src="backgroundImgSrc" />
     </div>
   </div>
 </template>
