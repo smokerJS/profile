@@ -102,7 +102,7 @@ export default {
     this.renderer.setSize( window.innerWidth, window.innerHeight);
     document.getElementById('container').appendChild(this.renderer.domElement);  
 
-    const geometry = new THREE.PlaneGeometry(8,5);
+    const geometry = new THREE.PlaneGeometry(3,3);
     const material = new THREE.MeshBasicMaterial({
         map: texture,
         color: 0xffffff,
