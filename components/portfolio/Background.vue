@@ -129,15 +129,28 @@ export default {
      scene.add(edgesMesh1); 
      scene.add(edgesMesh2); 
      scene.add(edgesMesh3); 
+
+      let lineSwitch = false;
+
     const render = () => {
       requestAnimationFrame( render );
-      camera.position.x += ( - this.mouseX - camera.position.x ) * 0.05;
-      camera.position.y += ( this.mouseY - camera.position.y ) * 0.05;
+      camera.position.x += ( - this.mouseX - camera.position.x ) * 0.02;
+      camera.position.y += ( this.mouseY - camera.position.y ) * 0.02;
       camera.lookAt( scene.position );
       sceneBackground.needsUpdate = true;
+      if(lineSwitch) {
+        edgesMesh1.position.set(-1.53, 0.01, 0);
+        edgesMesh2.position.set(-1.51, 0.01, 0.01);
+        edgesMesh3.position.set(-1.49, 0.02, 0);
+      } else {
+        edgesMesh1.position.set(-1.51, 0, 0);
+        edgesMesh2.position.set(-1.49, -0.01, 0);
+        edgesMesh3.position.set(-1.51, 0, 0);
+      }
       drawRandomDot();
       this.renderer.render(scene, camera);
       !this.$store.state.gnbSwitch && (this.backgroundImgSrc = this.renderer.domElement.toDataURL("image/png", 1.0));
+      lineSwitch = !lineSwitch;
     }
 
     render(); 
