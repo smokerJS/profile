@@ -92,7 +92,7 @@ export default {
         ctx.globalAlpha = copyCount;
         ctx.drawImage(copyCtx.canvas, 0, 0, ctx.canvas.width, ctx.canvas.height);
       }
-      copyCount += 0.02;
+      copyCount += 0.03;
     }
 
 
