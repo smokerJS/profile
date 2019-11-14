@@ -117,20 +117,19 @@ export default {
     const lineGeometry = new THREE.PlaneGeometry(8,5);
     const edges = new THREE.EdgesGeometry(lineGeometry);
     const edgesMaterial = new THREE.LineBasicMaterial({
-      color:0xff0000,
-      linewidth: 0.2,
+      color:0xff0000
     });
-  const edgesMesh1 = new THREE.LineSegments(edges, edgesMaterial);
-  const edgesMesh2 = new THREE.LineSegments(edges, edgesMaterial);
-  const edgesMesh3 = new THREE.LineSegments(edges, edgesMaterial);
-  edgesMesh1.position.set(-1.5, 0, 0);
-  edgesMesh2.position.set(-1.51, 0, 0);
-  edgesMesh3.position.set(-1.49, 0, 0);
-     scene.add(edgesMesh1); 
-     scene.add(edgesMesh2); 
-     scene.add(edgesMesh3); 
+    const edgesMesh1 = new THREE.LineSegments(edges, edgesMaterial);
+    const edgesMesh2 = new THREE.LineSegments(edges, edgesMaterial);
+    const edgesMesh3 = new THREE.LineSegments(edges, edgesMaterial);
+    edgesMesh1.position.set(-1.5, 0, 0);
+    edgesMesh2.position.set(-1.51, 0, 0);
+    edgesMesh3.position.set(-1.49, 0, 0);
+    scene.add(edgesMesh1); 
+    scene.add(edgesMesh2); 
+    scene.add(edgesMesh3); 
 
-      let lineSwitch = false;
+    let lineSwitch = false;
 
     const render = () => {
       requestAnimationFrame( render );
