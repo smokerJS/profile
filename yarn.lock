@@ -7306,10 +7306,22 @@ thread-loader@^2.1.2:
     loader-utils "^1.1.0"
     neo-async "^2.6.0"
 
+three-addons@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/three-addons/-/three-addons-1.2.0.tgz#a36293e2489bdda08be8efc31291485b41de1560"
+  integrity sha1-o2KT4kib3aCL6O/DEpFIW0HeFWA=
+  dependencies:
+    three "^0.92.0"
+
 three@^0.110.0:
   version "0.110.0"
   resolved "https://registry.yarnpkg.com/three/-/three-0.110.0.tgz#8719591de1336269113ee79f4268ba247b2324f8"
   integrity sha512-wlurH8XBO9Sd5VIw8nBa+taLR20kqaI4e9FiuMh6tqK8eOS2q2R+ZoUyufbyDTVTHhs8GiTbv0r2CMLkwerFJg==
+
+three@^0.92.0:
+  version "0.92.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.92.0.tgz#8d3d1f5af890e62da7f4cb45d20c09fa51057dcd"
+  integrity sha1-jT0fWviQ5i2n9MtF0gwJ+lEFfc0=
 
 through2@^2.0.0:
   version "2.0.5"
