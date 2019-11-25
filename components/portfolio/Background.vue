@@ -44,6 +44,8 @@ export default {
   mounted() {
     const video = document.getElementById('video');
     const texture = new THREE.VideoTexture(video);
+    
+
     texture.minFilter = THREE.LinearFilter;
     texture.magFilter = THREE.LinearFilter;
     texture.format = THREE.RGBFormat;
@@ -128,11 +130,39 @@ export default {
     scene.add(edgesMesh1); 
     scene.add(edgesMesh2); 
     scene.add(edgesMesh3); 
+  // {
+  //   const color = 0xFFFFFF;
+  //   const intensity = 2;
+  //   const light = new THREE.DirectionalLight(color, intensity);
+  //   light.position.set(-1, 2, 4);
+  //   scene.add(light);
+  // }
+    const composer = new EffectComposer(this.renderer);
+    const renderPass = new RenderPass(scene, camera);
+    composer.addPass(renderPass);
+
+  const bloomPass = new BloomPass(
+      1,    // strength
+      25,   // kernel size
+      4,    // sigma ?
+      256,  // blur render target resolution
+  );
+  composer.addPass(bloomPass);
+
+    const effectFilm = new FilmPass(     
+      0.35,   // noise intensity
+      0.025,  // scanline intensity
+      648,    // scanline count
+      false);  // grayscale
+    effectFilm.renderToScreen = true;
+    composer.addPass(effectFilm);
 
     let lineSwitch = false;
+    const clock = new THREE.Clock();
 
     const render = () => {
-      requestAnimationFrame( render );
+      
+      
       camera.position.x += ( - this.mouseX - camera.position.x ) * 0.02;
       camera.position.y += ( this.mouseY - camera.position.y ) * 0.02;
       camera.lookAt( scene.position );
@@ -146,10 +176,12 @@ export default {
         edgesMesh2.position.set(-1.49, -0.01, 0);
         edgesMesh3.position.set(-1.51, 0, 0);
       }
-      drawRandomDot();
+      // drawRandomDot();
       this.renderer.render(scene, camera);
       !this.$store.state.gnbSwitch && (this.backgroundImgSrc = this.renderer.domElement.toDataURL("image/png", 1.0));
       lineSwitch = !lineSwitch;
+      composer.render(clock.getDelta());
+      requestAnimationFrame( render );
     }
 
     render(); 
