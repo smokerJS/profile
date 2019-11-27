@@ -17,7 +17,7 @@
 
 <script>
 import * as THREE from 'three';
-import { EffectComposer, RenderPass, FilmPass, BloomPass } from 'three-addons'; // 모듈문제확인필요
+import { EffectComposer, RenderPass, FilmPass, BloomPass } from 'three-addons'; 
 
 export default {
   name: 'portfolio-background',
