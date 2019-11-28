@@ -17,7 +17,10 @@
 
 <script>
 import * as THREE from 'three';
-import { EffectComposer, RenderPass, FilmPass, BloomPass } from 'three-addons'; 
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js'; 
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js'; 
+import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js'; 
+import { BloomPass } from 'three/examples/jsm/postprocessing/BloomPass.js'; 
 
 export default {
   name: 'portfolio-background',
