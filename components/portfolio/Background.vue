@@ -158,10 +158,9 @@ export default {
     composer.addPass(effectFilm);
 
     let lineSwitch = false;
-
+    const clock = new THREE.Clock();
     const render = () => {
-      
-      
+      composer.setSize( window.innerWidth, window.innerHeight );
       camera.position.x += ( - this.mouseX - camera.position.x ) * 0.02;
       camera.position.y += ( this.mouseY - camera.position.y ) * 0.02;
       camera.lookAt( scene.position );
@@ -177,10 +176,14 @@ export default {
         edgesMesh3.position.set(-1.51, 0, 0);
       }
       drawRandomDot();
-      this.renderer.render(scene, camera);
+      // this.renderer.autoClear = false;
+      // this.renderer.clear();
+      // this.renderer.clear();
+      // this.renderer.setRenderTarget(composer);
+      // this.renderer.render(scene, camera);
       !this.$store.state.gnbSwitch && (this.backgroundImgSrc = this.renderer.domElement.toDataURL("image/png", 1.0));
       lineSwitch = !lineSwitch;
-      // composer.render();
+      composer.render(clock.getDelta());
       requestAnimationFrame( render );
     }
 
