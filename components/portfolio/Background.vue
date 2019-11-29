@@ -98,13 +98,13 @@ export default {
     scene.add(edgesMesh3); 
 
 
-    // {
-    //   const color = 0xFFFFFF;
-    //   const intensity = 2;
-    //   const light = new THREE.DirectionalLight(color, intensity);
-    //   light.position.set(-1, 2, 4);
-    //   scene.add(light);
-    // }
+    {
+      const color = 0xFFFFFF;
+      const intensity = 2;
+      const light = new THREE.DirectionalLight(color, intensity);
+      light.position.set(-1, 2, 4);
+      scene.add(light);
+    }
 
 
 
@@ -115,16 +115,17 @@ export default {
 
     const bloomPass = new BloomPass(
         1,    // strength
-        25,   // kernel size
-        4,    // sigma ?
-        256,  // blur render target resolution
+        50,   // kernel size
+        1,    // sigma ?
+        1000,  // blur render target resolution
     );
     composer.addPass(bloomPass);
 
     const effectFilm = new FilmPass(     
-      0.35,   // noise intensity
-      0.025,  // scanline intensity
-      648,    // scanline count
+      0.2,   // noise intensity
+      0.9,  // scanline intensity
+      10,
+      // 648,    // scanline count
       false);  // grayscale
     effectFilm.renderToScreen = true;
     composer.addPass(effectFilm);
@@ -132,8 +133,8 @@ export default {
     let lineSwitch = false;
     const clock = new THREE.Clock();
     const render = () => {
-      camera.position.x += ( - this.mouseX - camera.position.x ) * 0.02;
-      camera.position.y += ( this.mouseY - camera.position.y ) * 0.02;
+      camera.position.x += ( - this.mouseX - camera.position.x ) * 0.04;
+      camera.position.y += ( this.mouseY - camera.position.y ) * 0.04;
       camera.lookAt( scene.position );
       
       if(lineSwitch) {
