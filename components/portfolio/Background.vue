@@ -22,6 +22,7 @@ import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js'; 
 import { BloomPass } from 'three/examples/jsm/postprocessing/BloomPass.js'; 
 import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass.js'; 
+import fontJson from './FightThis_Regular.json';
 
 export default {
   name: 'portfolio-background',
@@ -84,6 +85,27 @@ export default {
     scene.add(mesh);  
 
     camera.position.z = 10; 
+
+    const loader = new THREE.FontLoader();
+
+    
+
+    const font = new THREE.Font( fontJson );
+
+      const textGeometry = new THREE.TextGeometry( 'js', {
+        font: font,
+        size: 0.5,
+        height: 0,
+        curveSegments: 12,
+      } );
+      const textMaterial = new THREE.MeshPhongMaterial( { color: 0xff0000 } );
+
+      const textMesh = new THREE.Mesh( textGeometry, textMaterial );
+      textMesh.position.set( -5, 1.5, 0 );
+
+      scene.add(textMesh);
+
+
 
 
     const lineGeometry = new THREE.PlaneGeometry(8,5);
