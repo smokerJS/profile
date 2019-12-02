@@ -21,6 +21,7 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js'; 
 import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js'; 
 import { BloomPass } from 'three/examples/jsm/postprocessing/BloomPass.js'; 
+import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass.js'; 
 
 export default {
   name: 'portfolio-background',
@@ -33,7 +34,10 @@ export default {
       mouseX: 0,
       mouseY: 0,
       backgroundSwitch: false,
-      backgroundImgSrc: ''
+      backgroundImgSrc: '',
+      composer: null,
+      effectGlitch: new GlitchPass(1000),
+      onGlitchSwitch: null
     }
   },
   methods: {
@@ -130,6 +134,10 @@ export default {
     effectFilm.renderToScreen = true;
     composer.addPass(effectFilm);
 
+    composer.addPass(this.effectGlitch);
+    this.effectGlitch.goWild = false;
+    this.effectGlitch.renderToScreen = true;
+    this.composer = composer;
     let lineSwitch = false;
     const clock = new THREE.Clock();
     const render = () => {
@@ -138,16 +146,16 @@ export default {
       camera.lookAt( scene.position );
       
       if(lineSwitch) {
-        edgesMesh1.position.set(-1.53, 0.01, 0);
-        edgesMesh2.position.set(-1.51, 0.01, 0.01);
-        edgesMesh3.position.set(-1.49, 0.02, 0);
+        edgesMesh1.position.set(-1.56, 0.04, -0.02);
+        edgesMesh2.position.set(-1.54, 0.02, 0.01);
+        edgesMesh3.position.set(-1.47, 0.03, 0);
       } else {
         edgesMesh1.position.set(-1.51, 0, 0);
         edgesMesh2.position.set(-1.49, -0.01, 0);
         edgesMesh3.position.set(-1.51, 0, 0);
       }
 
-      // this.renderer.clear();
+      this.renderer.clear();
       // this.renderer.setRenderTarget(renderTarget)
       // this.renderer.render(scene, camera);
 
