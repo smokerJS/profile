@@ -106,7 +106,7 @@ export default {
     spotLight.position.set(0,0,20);
     scene.add(spotLight); 
 
-    const bgTexture = new THREE.TextureLoader().load('images/index/temp.png');
+    const bgTexture = new THREE.TextureLoader().load('~images/index/temp.png');
     const bgPlaneGeometry =  new THREE.PlaneGeometry(25,25,1,1);
     const bgPlaneMaterial = new THREE.MeshPhongMaterial({map: bgTexture});
     const bgPlane = new THREE.Mesh(bgPlaneGeometry, bgPlaneMaterial);
@@ -116,7 +116,7 @@ export default {
 
 
 
-    const texture = new THREE.TextureLoader().load('images/index/temp.png');
+    const texture = new THREE.TextureLoader().load('~images/index/temp.png');
     const planeGeometry =  new THREE.PlaneGeometry(5,4.5,1,1);
     const planeMaterial = new THREE.MeshPhongMaterial({map: texture});
     const plane = new THREE.Mesh(planeGeometry, planeMaterial);
@@ -126,10 +126,10 @@ export default {
 
 
 
-    const noiseTexture = new THREE.ImageUtils.loadTexture( 'images/index/cloud.png' );
+    const noiseTexture = new THREE.ImageUtils.loadTexture( '~images/index/cloud.png' );
     noiseTexture.wrapS = noiseTexture.wrapT = THREE.RepeatWrapping; 
       
-    const lavaTexture = new THREE.ImageUtils.loadTexture( 'images/index/temp.png' );
+    const lavaTexture = new THREE.ImageUtils.loadTexture( '~images/index/temp.png' );
     lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping; 
 	
 	  // use "this." to create global object
