@@ -58,8 +58,8 @@ export default {
       varying vec2 vUv;
       void main() 
       { 
-          vUv = uv;
-          gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
       }
     `;
 
@@ -74,7 +74,7 @@ export default {
       varying vec2 vUv;
       void main() 
       {
-        vec2 uvTimeShift = vUv + vec2( -0.7, 1.5 ) * time * baseSpeed;	
+        vec2 uvTimeShift = vUv + vec2( ${-0.3 - (0.5 * Math.cos(0.2))}, ${0.2 + (0.5 * Math.cos(0.2))} ) * time * baseSpeed;	
         vec4 noiseGeneratorTimeShift = texture2D( noiseTexture, uvTimeShift );
         vec2 uvNoiseTimeShift = vUv + noiseScale * vec2( noiseGeneratorTimeShift.r, noiseGeneratorTimeShift.b );
         vec4 baseColor = texture2D( baseTexture, uvNoiseTimeShift );
@@ -107,7 +107,7 @@ export default {
     scene.add(spotLight);
 
     const bgTexture = new THREE.TextureLoader().load(`${require('@images/index/temp.png')}`);
-    const bgPlaneGeometry =  new THREE.PlaneGeometry(25,25,1,1);
+    const bgPlaneGeometry = new THREE.PlaneGeometry(25,25,1,1);
     const bgPlaneMaterial = new THREE.MeshPhongMaterial({map: bgTexture});
     const bgPlane = new THREE.Mesh(bgPlaneGeometry, bgPlaneMaterial);
     bgPlane.receiveShadow = true;
@@ -117,7 +117,7 @@ export default {
 
 
     const texture = new THREE.TextureLoader().load(`${require('@images/index/temp.png')}`);
-    const planeGeometry =  new THREE.PlaneGeometry(5,4.5,1,1);
+    const planeGeometry = new THREE.PlaneGeometry(5,4.5,1,1);
     const planeMaterial = new THREE.MeshPhongMaterial({map: texture});
     const plane = new THREE.Mesh(planeGeometry, planeMaterial);
     plane.receiveShadow = true;
@@ -126,7 +126,7 @@ export default {
 
 
 
-    const noiseTexture = new THREE.ImageUtils.loadTexture(`${require('@images/index/cloud.png')}`);
+    const noiseTexture = new THREE.ImageUtils.loadTexture(`${require('@images/index/shader.png')}`);
     noiseTexture.wrapS = noiseTexture.wrapT = THREE.RepeatWrapping; 
       
     const lavaTexture = new THREE.ImageUtils.loadTexture(`${require('@images/index/temp.png')}`);
