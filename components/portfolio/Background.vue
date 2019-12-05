@@ -1,6 +1,14 @@
 <template>
   <div class="portfolio-background-group" @mousemove="mouseMoveHandler">
-    <button id="tabBtn" @click="tabSwitchHandler">탭</button>
+    <video id="video"
+      loop
+      preload="auto"
+      autoplay
+      crossOrigin="anonymous"
+      muted="muted"
+      webkit-playsinline>
+      <source :src="require('@videos/video.mp4')">
+    </video>
     <div id="container">
       <img v-if="$store.state.gnbSwitch" id="backgroundImg" :class="$store.state.gnbSwitch && 'open'" :src="backgroundImgSrc" />
     </div>
@@ -15,14 +23,13 @@ import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
 import { BloomPass } from 'three/examples/jsm/postprocessing/BloomPass.js'; 
 import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass.js'; 
 import fontJson from './FightThis_Regular.json';
-import { PlaneGeometry } from 'three';
 
 export default {
   name: 'portfolio-background',
   data() {
     return {
-      camera: new THREE.PerspectiveCamera(),
-      scene: new THREE.Scene(),
+      camera: null,
+      scene: null,
       renderer: new THREE.WebGLRenderer({antialias : true, preserveDrawingBuffer : true}),
       mesh: null,
       mouseX: 0,
@@ -30,18 +37,11 @@ export default {
       backgroundSwitch: false,
       backgroundImgSrc: '',
       composer: null,
-      onGlitchSwitch: null,
-      tabSwitch: false
+      effectGlitch: new GlitchPass(1000),
+      onGlitchSwitch: null
     }
   },
   methods: {
-    windowResizeHandler() {
-      this.renderer.setSize( window.innerWidth, window.innerHeight);
-    },
-    tabSwitchHandler() {
-      const {tabSwitch, camera} = this;
-      this.tabSwitch = !tabSwitch;
-    },
     mouseMoveHandler(e) {
       let windowHalfX = window.innerWidth / 2;
 			let	windowHalfY = window.innerHeight / 2;
@@ -49,46 +49,8 @@ export default {
       this.$set(this.$data, 'mouseY', ( e.clientY - windowHalfY ) / 70);
     }
   },
-  created() {
-    window.addEventListener('resize', this.windowResizeHandler)
-    this.windowResizeHandler();
-  },
   mounted() {
-    const vertexShader = `
-      varying vec2 vUv;
-      void main() 
-      { 
-        vUv = uv;
-        gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
-      }
-    `;
-
-    const fragmentShader = `
-      uniform sampler2D baseTexture;
-      uniform float baseSpeed;
-      uniform sampler2D noiseTexture;
-      uniform float noiseScale;
-      uniform float alpha;
-      uniform float time;
-
-      varying vec2 vUv;
-      void main() 
-      {
-        vec2 uvTimeShift = vUv + vec2( ${-0.3 - (0.5 * Math.cos(0.2))}, ${0.2 + (0.5 * Math.cos(0.2))} ) * time * baseSpeed;	
-        vec4 noiseGeneratorTimeShift = texture2D( noiseTexture, uvTimeShift );
-        vec2 uvNoiseTimeShift = vUv + noiseScale * vec2( noiseGeneratorTimeShift.r, noiseGeneratorTimeShift.b );
-        vec4 baseColor = texture2D( baseTexture, uvNoiseTimeShift );
-
-        baseColor.a = alpha;
-        gl_FragColor = baseColor;
-      }  
-    `;
-
-    const {scene, camera} = this;
-    camera.position.x = 0;
-    camera.position.y = 0;
-    camera.position.z = 20;
-    this.renderer.shadowMap.enabled = true;
+    this.renderer.setSize( window.innerWidth, window.innerHeight);
 
     const parameters = {
         minFilter: THREE.LinearFilter,
@@ -97,76 +59,37 @@ export default {
         stencilBuffer: true,
     };
 
-    document.getElementById('container').appendChild(this.renderer.domElement);
-
     const renderTarget = new THREE.WebGLRenderTarget( window.innerWidth, window.innerHeight, parameters );
-    // scene.background = new THREE.ImageUtils.loadTexture( 'images/index/temp.png' );
 
-    var spotLight = new THREE.PointLight(0xFFFFFF,1,50);
-    spotLight.position.set(0,0,20);
-    scene.add(spotLight);
+    const video = document.getElementById('video');
+    const texture = new THREE.VideoTexture(video);
+    texture.minFilter = parameters.minFilter;
+    texture.magFilter = parameters.magFilter;
+    texture.format = parameters.format;
+    
 
-    const bgTexture = new THREE.TextureLoader().load(`${require('@images/index/temp.png')}`);
-    const bgPlaneGeometry = new THREE.PlaneGeometry(25,25,1,1);
-    const bgPlaneMaterial = new THREE.MeshPhongMaterial({map: bgTexture});
-    const bgPlane = new THREE.Mesh(bgPlaneGeometry, bgPlaneMaterial);
-    bgPlane.receiveShadow = true;
-    bgPlane.position.set(0,0,-5);
-    scene.add(bgPlane);
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color('#000');;
 
+    const camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 ); 
 
+    document.getElementById('container').appendChild(this.renderer.domElement);  
 
-    const texture = new THREE.TextureLoader().load(`${require('@images/index/temp.png')}`);
-    const planeGeometry = new THREE.PlaneGeometry(5,4.5,1,1);
-    const planeMaterial = new THREE.MeshPhongMaterial({map: texture});
-    const plane = new THREE.Mesh(planeGeometry, planeMaterial);
-    plane.receiveShadow = true;
-    plane.position.set(0,0,10);
-    scene.add(plane);
+    const geometry = new THREE.PlaneGeometry(3,3);
+    const material = new THREE.MeshBasicMaterial({
+        map: texture,
+        color: 0xffffff,
+    })
 
+    const mesh = new THREE.Mesh( geometry, material);  
+    scene.add(mesh);  
 
-
-    const noiseTexture = new THREE.ImageUtils.loadTexture(`${require('@images/index/shader.png')}`);
-    noiseTexture.wrapS = noiseTexture.wrapT = THREE.RepeatWrapping; 
-      
-    const lavaTexture = new THREE.ImageUtils.loadTexture(`${require('@images/index/temp.png')}`);
-    lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping; 
-	
-	  // use "this." to create global object
-    const customUniforms = {
-      baseTexture: 	{ type: "t", value: lavaTexture },
-      baseSpeed: 		{ type: "f", value: 0.05 },
-      noiseTexture: 	{ type: "t", value: noiseTexture },
-      noiseScale:		{ type: "f", value: 0.5337 },
-      alpha: 			{ type: "f", value: 0.8 },
-      time: 			{ type: "f", value: 1.0 }
-    };
-	
-    // create custom material from the shader code above
-    //   that is within specially labeled script tags
-    const customMaterial = new THREE.ShaderMaterial({
-      uniforms: customUniforms,
-      vertexShader: vertexShader,
-      fragmentShader: fragmentShader
-    });
-
-    // other material properties
-    customMaterial.side = THREE.DoubleSide;
-    customMaterial.transparent = true;
-
-    // apply the material to a surface
-    const flatGeometry = new THREE.PlaneGeometry( 11, 11 );
-    const surface = new THREE.Mesh( flatGeometry, customMaterial );
-    surface.position.set(0,0.5,10);
-    scene.add( surface );
-	
-
-
-
-
-
+    camera.position.z = 10; 
 
     const loader = new THREE.FontLoader();
+
+    
+
     const font = new THREE.Font( fontJson );
 
       const textGeometry = new THREE.TextGeometry( 'js', {
@@ -185,31 +108,82 @@ export default {
 
 
 
+    const lineGeometry = new THREE.PlaneGeometry(8,5);
+    const edges = new THREE.EdgesGeometry(lineGeometry);
+    const edgesMaterial = new THREE.LineBasicMaterial({
+      color:0xff0000
+    });
+    const edgesMesh1 = new THREE.LineSegments(edges, edgesMaterial);
+    const edgesMesh2 = new THREE.LineSegments(edges, edgesMaterial);
+    const edgesMesh3 = new THREE.LineSegments(edges, edgesMaterial);
+    edgesMesh1.position.set(-1.5, 0, 0);
+    edgesMesh2.position.set(-1.51, 0, 0);
+    edgesMesh3.position.set(-1.49, 0, 0);
+    scene.add(edgesMesh1); 
+    scene.add(edgesMesh2); 
+    scene.add(edgesMesh3); 
+
+
+    {
+      const color = 0xFFFFFF;
+      const intensity = 2;
+      const light = new THREE.DirectionalLight(color, intensity);
+      light.position.set(-1, 2, 4);
+      scene.add(light);
+    }
+
+
+
     const composer = new EffectComposer(this.renderer, renderTarget);
     composer.setSize( window.innerWidth, window.innerHeight);
 
     composer.addPass(new RenderPass(scene, camera));
 
+    const bloomPass = new BloomPass(
+        1,    // strength
+        50,   // kernel size
+        1,    // sigma ?
+        1000,  // blur render target resolution
+    );
+    composer.addPass(bloomPass);
+
+    const effectFilm = new FilmPass(     
+      0.2,   // noise intensity
+      0.9,  // scanline intensity
+      10,
+      // 648,    // scanline count
+      false);  // grayscale
+    effectFilm.renderToScreen = true;
+    composer.addPass(effectFilm);
+
+    composer.addPass(this.effectGlitch);
+    this.effectGlitch.goWild = false;
+    this.effectGlitch.renderToScreen = true;
     this.composer = composer;
+    let lineSwitch = false;
     const clock = new THREE.Clock();
     const render = () => {
-      const delta = clock.getDelta();
-      // camera.position.x += ( - this.mouseX - camera.position.x ) * 0.04;
-      // camera.position.y += ( this.mouseY - camera.position.y ) * 0.04;
+      camera.position.x += ( - this.mouseX - camera.position.x ) * 0.04;
+      camera.position.y += ( this.mouseY - camera.position.y ) * 0.04;
       camera.lookAt( scene.position );
-
-      bgPlane.rotation.x = -(this.mouseX * 0.005);
-      bgPlane.rotation.y = this.mouseY * 0.005;
-
-      surface.position.set(this.mouseX * 0.002, 0.5 - (this.mouseY * 0.002),10);
+      
+      if(lineSwitch) {
+        edgesMesh1.position.set(-1.56, 0.04, -0.02);
+        edgesMesh2.position.set(-1.54, 0.02, 0.01);
+        edgesMesh3.position.set(-1.47, 0.03, 0);
+      } else {
+        edgesMesh1.position.set(-1.51, 0, 0);
+        edgesMesh2.position.set(-1.49, -0.01, 0);
+        edgesMesh3.position.set(-1.51, 0, 0);
+      }
 
       this.renderer.clear();
       // this.renderer.setRenderTarget(renderTarget)
       // this.renderer.render(scene, camera);
 
       !this.$store.state.gnbSwitch && (this.backgroundImgSrc = this.renderer.domElement.toDataURL("image/png", 1.0));
-      customUniforms.time.value += delta;
-      composer.render(delta);
+      lineSwitch = !lineSwitch;
+      composer.render(clock.getDelta());
       requestAnimationFrame( render );
     }
 
@@ -244,11 +218,5 @@ export default {
       z-index: 2;
       display: block;
     }
-  }
-  #tabBtn {
-    position: fixed;
-    z-index: 100;
-    top: 50px;
-    left: 50px;
   }
 </style>
