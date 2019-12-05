@@ -156,12 +156,106 @@ export default {
     effectFilm.renderToScreen = true;
     composer.addPass(effectFilm);
 
+
+
+
+ const vertexShader = `
+      varying vec2 vUv;
+      void main() 
+      { 
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+      }
+    `;
+
+    const fragmentShader = `
+      uniform sampler2D baseTexture;
+      uniform float baseSpeed;
+      uniform sampler2D noiseTexture;
+      uniform float noiseScale;
+      uniform float alpha;
+      uniform float time;
+      uniform vec2 mouse;
+
+
+      varying vec2 vUv;
+      void main() 
+      {
+        vec2 uvTimeShift = vUv + vec2(mouse.x, mouse.y) * time * baseSpeed;	
+        vec4 noiseGeneratorTimeShift = texture2D( noiseTexture, uvTimeShift );
+        vec2 uvNoiseTimeShift = vUv + noiseScale * vec2( noiseGeneratorTimeShift.r, noiseGeneratorTimeShift.b );
+        vec4 baseColor = texture2D( baseTexture, uvNoiseTimeShift );
+
+        baseColor.a = alpha;
+        gl_FragColor = baseColor;
+      }  
+    `;
+
+
+
+    const noiseTexture = new THREE.ImageUtils.loadTexture('./images/index/cloud.png');
+    noiseTexture.wrapS = noiseTexture.wrapT = THREE.RepeatWrapping; 
+      
+    const lavaTexture = new THREE.ImageUtils.loadTexture('./images/index/temp.png');
+    lavaTexture.wrapS = lavaTexture.wrapT = THREE.RepeatWrapping; 
+	
+	  // use "this." to create global object
+    const customUniforms = {
+      baseTexture: 	{ type: "t", value: texture },
+      baseSpeed: 		{ type: "f", value: 0.05 },
+      noiseTexture: 	{ type: "t", value: noiseTexture },
+      noiseScale:		{ type: "f", value: 0.5337 },
+      alpha: 			{ type: "f", value: 0.8 },
+      time: 			{ type: "f", value: 1.0 },
+      mouse: { value: new THREE.Vector2() },
+    };
+	
+    // create custom material from the shader code above
+    //   that is within specially labeled script tags
+    const customMaterial = new THREE.ShaderMaterial({
+      uniforms: customUniforms,
+      vertexShader: vertexShader,
+      fragmentShader: fragmentShader
+    });
+
+    // other material properties
+    customMaterial.side = THREE.DoubleSide;
+    customMaterial.transparent = true;
+
+    // apply the material to a surface
+    const flatGeometry = new THREE.PlaneGeometry( 50, 50 );
+    const surface = new THREE.Mesh( flatGeometry, customMaterial );
+    surface.position.set(0,0,0);
+    scene.add( surface );
+
+
+
+    var mouse = new THREE.Vector2();
+
+    window.addEventListener("mousemove", function(event) {
+      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    }, false)
+
+
+
+
+
+
+
     composer.addPass(this.effectGlitch);
     this.effectGlitch.goWild = false;
     this.effectGlitch.renderToScreen = true;
     this.composer = composer;
     let lineSwitch = false;
     const clock = new THREE.Clock();
+
+
+
+
+
+
+
     const render = () => {
       camera.position.x += ( - this.mouseX - camera.position.x ) * 0.04;
       camera.position.y += ( this.mouseY - camera.position.y ) * 0.04;
@@ -183,6 +277,8 @@ export default {
 
       !this.$store.state.gnbSwitch && (this.backgroundImgSrc = this.renderer.domElement.toDataURL("image/png", 1.0));
       lineSwitch = !lineSwitch;
+      customUniforms.time.value += clock.getDelta();
+      customUniforms.mouse.value.copy(mouse);
       composer.render(clock.getDelta());
       requestAnimationFrame( render );
     }
