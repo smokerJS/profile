@@ -204,7 +204,7 @@ export default {
       baseTexture: 	{ type: "t", value: texture },
       baseSpeed: 		{ type: "f", value: 0.05 },
       noiseTexture: 	{ type: "t", value: noiseTexture },
-      noiseScale:		{ type: "f", value: 0.5337 },
+      noiseScale:		{ type: "f", value: 0.8337 },
       alpha: 			{ type: "f", value: 0.8 },
       time: 			{ type: "f", value: 1.0 },
       mouse: { value: new THREE.Vector2() },
