@@ -22,7 +22,7 @@ import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js'; 
 import { BloomPass } from 'three/examples/jsm/postprocessing/BloomPass.js'; 
 import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass.js'; 
-import fontJson from './FightThis_Regular.json';
+import fontJson from './FightThis_Regular.json'; // 임포트 방식 정리 필요
 
 export default {
   name: 'portfolio-background',
