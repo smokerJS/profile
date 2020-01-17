@@ -10,7 +10,7 @@
         <strong>send user info</strong>
       </div>
       <div contenteditable="true">
-
+        01234
       </div>
       <button>send</button>
     </article>
