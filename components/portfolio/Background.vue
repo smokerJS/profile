@@ -272,8 +272,6 @@ export default {
       }
 
       this.renderer.clear();
-      // this.renderer.setRenderTarget(renderTarget)
-      // this.renderer.render(scene, camera);
 
       !this.$store.state.gnbSwitch && (this.backgroundImgSrc = this.renderer.domElement.toDataURL("image/png", 1.0));
       lineSwitch = !lineSwitch;
