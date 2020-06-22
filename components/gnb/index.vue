@@ -14,7 +14,7 @@
           <a class="glitch2" href="https://blog.smokerjs.dev" data-text="Blog" target="_blank">Blog</a>
         </li>
         <li>
-          <a class="glitch3" href="https://drive.google.com/open?id=1HKSkvH0TYfE2ZZ33VSaVJiDyDIKI0qey" data-text="Portfolio" target="_blank">Portfolio</a>
+          <a class="glitch3" href="https://drive.google.com/file/d/1mhnxH1GHmO3eaWUa3GOM7_YYlGU1eHtt/view?usp=sharing" data-text="Portfolio" target="_blank">Portfolio</a>
         </li>
       </ul>
       <!-- 임시주석처리
