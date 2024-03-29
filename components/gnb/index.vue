@@ -11,10 +11,10 @@
           <a class="glitch1" href="https://github.com/smokerJS" data-text="Github" target="_blank">Github</a>
         </li>
         <li>
-          <a class="glitch2" href="https://blog.smokerjs.dev" data-text="Blog" target="_blank">Blog</a>
+          <a class="glitch2" href="https://www.linkedin.com/in/jin-sol-jung-83221b189/" data-text="Blog" target="_blank">Linkedin</a>
         </li>
         <li>
-          <a class="glitch3" href="https://drive.google.com/file/d/1mhnxH1GHmO3eaWUa3GOM7_YYlGU1eHtt/view" data-text="Portfolio" target="_blank">Portfolio</a>
+          <a class="glitch3" href="https://drive.google.com/file/d/15Z2HACPziJpSH0CcxmpI-1XxV3mQhtUV/view" data-text="Portfolio" target="_blank">Portfolio</a>
         </li>
       </ul>
       <!-- 임시주석처리
